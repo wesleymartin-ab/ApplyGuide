@@ -1,0 +1,5 @@
+{
+    "subdomain": "https://applyguide.zendesk.com",
+    "username": "[USERNAME]@applyboard.com/token",
+    "password": "[TOKEN]"
+}
