@@ -1,0 +1,63 @@
+<div class="layout">
+  <div class="layout__head">
+    <header class="topbar is-hidden {{#is settings.hero_show_image 'yes'}}topbar_image{{/is}}" data-topbar>
+      <div class="topbar__nav container">
+        <div class="container-inner topbar__container-inner">
+          <div class="topbar__inner">
+            <div class="topbar__col clearfix">
+              <div class="logo-wrapper">
+                <div class="logo">
+                  {{#link 'help_center'}}
+                    <img src="{{settings.logo}}" alt="logo" data-svg>
+                  {{/link}}
+                </div>
+              </div>
+              <p class="help-center-name">
+                {{#if settings.toggle_translations}}
+                  {{dc settings.help_center_title}}
+                {{else}}
+                  {{settings.help_center_title}}
+                {{/if}}
+              </p>
+              <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button x" data-toggle-menu>
+                <span class="lines"></span></button>
+            </div>
+            <div class="topbar__col topbar__menu">
+              <div class="topbar__collapse" data-menu>
+                <div class="topbar__controls">
+                  {{#if settings.toggle_custom_link}}
+                    <a href="{{#if settings.toggle_translations}}{{dc settings.topbar_custom_link_url}}{{else}}{{settings.topbar_custom_link_url}}{{/if}}" class="topbar__link">
+                      {{#if settings.toggle_translations}}
+                        {{dc settings.topbar_custom_link_title}}
+                      {{else}}
+                        {{settings.topbar_custom_link_title}}
+                      {{/if}}
+                    </a>
+                  {{/if}}
+                  {{link 'community' class='topbar__link'}}
+                  {{link 'new_request' class='topbar__link submit-a-request'}}
+                  {{user_info}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero-unit is-hidden" data-hero-unit>
+          <div class="container-inner search-box search-box--hero-unit" data-search-box>
+            <div class="intro-title">
+              {{#if settings.toggle_translations}}
+                {{dc settings.hero_title}}
+              {{else}}
+                {{settings.hero_title}}
+              {{/if}}
+            </div>
+            {{search instant=true placeholder=settings.search_placeholder}}
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="layout__content">

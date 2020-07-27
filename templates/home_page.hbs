@@ -1,0 +1,129 @@
+<div class="promoted-articles-section container" data-home-page>
+  <div class="container-inner">
+
+    {{#is settings.toggle_promoted_articles "yes"}}
+      <section class="promoted-articles" id="promoted-articles">
+        <h4 class="promoted-articles__title">{{t 'promoted_articles'}}</h4>
+        <ul class="promoted-articles__list row">
+          {{#each promoted_articles}}
+            <li class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4">
+              <span class="fas fa-star" title="{{t 'promoted'}}"></span>
+              <div class="promoted-articles-item__content ">
+                <a class="promoted-articles-item__title" href="{{url}}">{{title}}</a>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+    </section>
+    {{/is}}
+  </div>
+</div>
+  <div class="container-inner">
+  {{#if help_center.community_enabled}}
+<div align="center">
+    <section class="section community">
+      <p>
+      <h1>{{t 'community'}}</h1>
+      
+   {{#if featured_posts}}
+<ul class="featured-post-list row">
+          {{#each featured_posts}}
+            <li class="featured-post-item column column--sm-3 column--sm-6 column--lg-4">
+              <span class="fas fa-star" title="{{t 'promoted'}}"></span>
+              <div class="featured-post-item__content ">
+                <a class="featured-post-item__title" href="{{url}}">{{title}}</a>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+    {{else}}
+      <p>{{t 'no_featured_posts'}}</p>
+    {{/if}}
+<p>
+      {{#link 'community' class='community-link'}}
+      <h6>{{t 'join_conversation'}}</h6>
+      {{/link}}</p>
+    </section>
+</div>
+  {{/if}}
+</div>
+<div class="container container--grey clearfix">
+  <div class="container-inner">
+    {{#is settings.toggle_category_list "yes"}}
+      {{#if categories}}
+      <div class="knowledge-base" id="category-list">
+        <h2 class="category-list-title">{{t 'knowledge_base'}}</h2>
+        <ul class="row category-list">
+          {{#each categories}}
+            <li class="column column column--sm-6 category-list-item" id="{{id}}">
+              <a class="category-list-item__link" href="{{url}}">
+                <div class="category-list-item__icon">
+
+                  {{#is id 360002015413}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c"><span style="color:#EDB032" class="fas fa-bullhorn" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}
+
+{{#is id 360001884593}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-book" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}
+
+{{#is id 360001866534}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-laptop-code" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}
+                  {{#is id 360001901213}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-running" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}
+                  {{#is id 360002162674}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-file-invoice-dollar" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}
+                  {{#is id 360001866454}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-user-graduate" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}
+                  {{#is id 360001909753}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-globe-asia" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}
+                  {{#is id 360001953833}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-landmark" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}
+                   
+                  {{#is id 360002200674}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-globe-asia" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}  
+                  {{#is id 360002200694}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-globe-asia" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}  
+                            {{#is id 360002421414}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-globe-asia" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}  
+                  {{#is id 360001908313}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-briefcase" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}  
+                  {{#is id 360003100654}}
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
+                  <span style="color:#EDB032" class="fas fa-lightbulb" title="{{t 'promoted'}}"></span></svg>
+                  {{/is}}  
+                </div>
+                <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</h2>
+                <p class="meta">{{excerpt description characters=50}}</p>
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+
+      </div>
+      {{/if}}
+    {{/is}}
+  </div>
+</div>
+</div>
