@@ -1,129 +1,180 @@
-<div class="promoted-articles-section container" data-home-page>
-  <div class="container-inner">
-
-    {{#is settings.toggle_promoted_articles "yes"}}
-      <section class="promoted-articles" id="promoted-articles">
-        <h4 class="promoted-articles__title">{{t 'promoted_articles'}}</h4>
-        <ul class="promoted-articles__list row">
-          {{#each promoted_articles}}
-            <li class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4">
-              <span class="fas fa-star" title="{{t 'promoted'}}"></span>
-              <div class="promoted-articles-item__content ">
-                <a class="promoted-articles-item__title" href="{{url}}">{{title}}</a>
-              </div>
-            </li>
-          {{/each}}
-        </ul>
-    </section>
-    {{/is}}
-  </div>
-</div>
-  <div class="container-inner">
-  {{#if help_center.community_enabled}}
-<div align="center">
-    <section class="section community">
-      <p>
-      <h1>{{t 'community'}}</h1>
-      
-   {{#if featured_posts}}
-<ul class="featured-post-list row">
-          {{#each featured_posts}}
-            <li class="featured-post-item column column--sm-3 column--sm-6 column--lg-4">
-              <span class="fas fa-star" title="{{t 'promoted'}}"></span>
-              <div class="featured-post-item__content ">
-                <a class="featured-post-item__title" href="{{url}}">{{title}}</a>
-              </div>
-            </li>
-          {{/each}}
-        </ul>
-    {{else}}
-      <p>{{t 'no_featured_posts'}}</p>
-    {{/if}}
-<p>
-      {{#link 'community' class='community-link'}}
-      <h6>{{t 'join_conversation'}}</h6>
-      {{/link}}</p>
-    </section>
-</div>
-  {{/if}}
-</div>
-<div class="container container--grey clearfix">
+<!-- Include Handlebars from a CDN -->
+<div class="categories-section container container--grey">
   <div class="container-inner">
     {{#is settings.toggle_category_list "yes"}}
-      {{#if categories}}
-      <div class="knowledge-base" id="category-list">
-        <h2 class="category-list-title">{{t 'knowledge_base'}}</h2>
-        <ul class="row category-list">
-          {{#each categories}}
-            <li class="column column column--sm-6 category-list-item" id="{{id}}">
-              <a class="category-list-item__link" href="{{url}}">
-                <div class="category-list-item__icon">
+    {{#if categories}}
+    <div class="knowledge-base" id="category-list">
+      <ul class="row updated-category-list">
+        {{#each categories}}
+        {{!-- TODO: Convert this to a method to check which category it is --}}
+        {{#is name "Company Updates" }}
+        <div class="column column--sm-4 category-list-item category-list-item__company_updates" id="{{id}}">
+          <a class="category-list-item__link" href="{{url}}">
+            <div class="category-list-item__icon">
+            </div>
+            <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
+            {{description}}
+          </a>
+        </div>
+        {{/is}}
+        {{#is name "Team Pages " }}
+        <div class="column column--sm-4 category-list-item category-list-item__departments" id="{{id}}"
+          data="{{name}}">
+          <a class="category-list-item__link" href="{{url}}">
+            <div class="category-list-item__icon">
+            </div>
+            <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
+            <p class="meta">{{excerpt description characters=50}}</p>
+          </a>
+        </div>
+        {{/is}}
+        {{#is name "Resources & Onboarding " }}
+        <div class="column column--sm-4 category-list-item category-list-item__onboarding_and_resources"
+          id="{{id}}">
+          <a class="category-list-item__link" href="{{url}}">
+            <div class="category-list-item__icon">
+            </div>
+            <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
+            <p class="meta">{{excerpt description characters=50}}</p>
+          </a>
+        </div>
+        {{/is}}
+        {{#is name "Global Markets" }}
+        <div class="column column--sm-12 category-list-item category-list-item__global_markets" id="{{id}}">
+          <a class="category-list-item__link" href="{{url}}">
+            <div class="category-list-item__icon">
+            </div>
+            <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
+            <p class="meta">{{excerpt description characters=50}}</p>
+          </a>
+        </div>
+        {{/is}}
+        {{/each}}
+      </ul>
 
-                  {{#is id 360002015413}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c"><span style="color:#EDB032" class="fas fa-bullhorn" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}
-
-{{#is id 360001884593}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-book" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}
-
-{{#is id 360001866534}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-laptop-code" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}
-                  {{#is id 360001901213}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-running" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}
-                  {{#is id 360002162674}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-file-invoice-dollar" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}
-                  {{#is id 360001866454}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-user-graduate" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}
-                  {{#is id 360001909753}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-globe-asia" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}
-                  {{#is id 360001953833}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-landmark" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}
-                   
-                  {{#is id 360002200674}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-globe-asia" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}  
-                  {{#is id 360002200694}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-globe-asia" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}  
-                            {{#is id 360002421414}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-globe-asia" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}  
-                  {{#is id 360001908313}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-briefcase" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}  
-                  {{#is id 360003100654}}
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="50" height="50" viewBox="0 0 50 50" xml:space="preserve" fill="#5cb85c">
-                  <span style="color:#EDB032" class="fas fa-lightbulb" title="{{t 'promoted'}}"></span></svg>
-                  {{/is}}  
-                </div>
-                <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</h2>
-                <p class="meta">{{excerpt description characters=50}}</p>
-              </a>
-            </li>
-          {{/each}}
-        </ul>
-
-      </div>
-      {{/if}}
+    </div>
+    {{/if}}
     {{/is}}
   </div>
 </div>
+<div class="container" data-home-page>
+  <div class="container-inner">
+    {{#is settings.toggle_promoted_articles "yes"}}
+    <section class="promoted-articles" id="promoted-articles">
+      <h4 class="promoted-articles__title">
+        <span class="fas fa-chart-line" title="{{t 'promoted'}}"></span>
+        <b>{{t 'promoted_articles'}}</b>
+      </h4>
+      <ul class="promoted-articles__list row">
+        {{#each promoted_articles}}
+        <li class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4">
+          <span class="fas fa-circle" title="{{t 'promoted'}}"></span>
+          <div class="promoted-articles-item__content ">
+            <a class="promoted-articles-item__title" href="{{url}}">{{title}}</a>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+    {{/is}}
+  </div>
+</div>
+
+
+<div class="container" data-home-page>
+  <div class="container-inner">
+    <section class="apply-fam" id="apply-fam">
+      <h4 class="promoted-articles__title">
+        <span class="fas fa-star" title="{{t 'promoted'}}"></span>
+        <b>{{t 'promoted_articles'}}</b>
+      </h4>
+      <div class="row" style="height: 500px">
+        <div class="column column--xs-6 column--sm-6 column--sm-offset-1">
+          <div class="row">
+            <div class="column column--xs-6 column--sm-12 fam-card-wrapper">
+              <div class="apply-fam-card" id="fam-card__life">
+                <div class="life-at-applyboard-title">
+                Life at ApplyBoard
+                </div>
+                <iframe class="life-at-applyboard-video" src="https://www.youtube.com/embed/A0s0NUuv_l8" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column column--xs-6 column--sm-4 fam-card-wrapper">
+              <a id="creative-channels_link" href="https://applyguide.zendesk.com/hc/en-us/articles/360051802313-Executive-Creative-Channels-">
+              <div class="apply-fam-card" id="fam-card__creative_channels">
+                Creative Channels
+              </div>
+              </a>
+            </div>
+            <div class="column column--xs-6 column--sm-8 fam-card-wrapper">
+              <a id="blog_link" href="https://www.applyboard.com/blog">
+                <div class="apply-fam-card" id="fam-card__blog">
+                  ApplyBoard Blog
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <div class="column column--xs-6 column--sm-4">
+          <div class="row">
+            <div class="column column--xs-6 column--sm-6 fam-card-wrapper">
+              <a id="apply_buzz_link" href="">
+                <div class="apply-fam-card" id="fam-card__committees">
+                  ApplyBuzz
+                </div>
+              </a>
+            </div>
+            <div class="column column--xs-6 column--sm-6 fam-card-wrapper">
+              <a id="apply_clubs_link" href="https://applyguide.zendesk.com/hc/en-us/sections/360004978294-ApplyClubs">
+                <div class="apply-fam-card" id="fam-card__clubs">
+                  ApplyClubs
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column column--xs-6 column--sm-12 fam-card-wrapper">
+              <div class="apply-fam-card" id="fam-card__events">
+                What's Happening at ApplyBoard
+                <li id="event-0" class="event-list-item">
+                  <a class="article-list-item__link" href=""></a>
+                </li>
+                <li id="event-1" class="event-list-item">
+                  <a class="article-list-item__link" href=""></a>
+                </li>
+                <li id="event-2" class="event-list-item">
+                  <a class="article-list-item__link" href=""></a>
+                </li>
+                <li id="event-3" class="event-list-item">
+                  <a class="article-list-item__link" href=""></a>
+                </li>
+                <li id="event-4" class="event-list-item">
+                  <a class="article-list-item__link" href=""></a>
+                </li>
+                <li id="event-5" class="event-list-item">
+                  <a class="article-list-item__link" href=""></a>
+                </li>
+                <li id="event-6" class="event-list-item">
+                  <a class="article-list-item__link" href=""></a>
+                </li>
+                <li id="event-7" class="event-list-item">
+                  <a class="article-list-item__link" href=""></a>
+                </li>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+
 </div>
