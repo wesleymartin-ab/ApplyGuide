@@ -3156,7 +3156,7 @@ input[type="search"]:focus {
   text-align: left;
   height: 100%;
   vertical-align: middle;
-  background-color: $brand_primary;
+  background-color: white;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
@@ -3189,7 +3189,7 @@ input[type="search"]:focus {
 .category-list-item__title {
   margin-bottom: 8px;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 16px;
   color: $text_color;
   text-transform: uppercase;
 }
@@ -3202,10 +3202,10 @@ input[type="search"]:focus {
 }
 
 .category-list-item__icon {
-  height: 40px;
-  position: absolute;
-  left: 18px;
-  background: url($hero_homepage_image) no-repeat center;
+  width: auto;
+  height: 50%;
+  padding-top:10px;
+  margin: 0 auto 10px;
 }
 
 .category-list-item__icon svg {
@@ -3223,6 +3223,34 @@ input[type="search"]:focus {
 .category-list-item__link:focus .meta,
 .category-list-item__link:hover .meta {
   /* color: #fff; */
+}
+
+#company_updates_icon {
+  background: url("../assets/Company_Updates.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#departments_icon {
+  background: url("../assets/Departments.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#onboarding_and_resources_icon {
+  background: url("../assets/Onboarding.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#global_markets_icon {
+  background: url("../assets/Global_Markets.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
 }
 
 .category-list-item__global_markets {
@@ -3248,7 +3276,7 @@ input[type="search"]:focus {
 }
 
 .container--grey {
-  background-color: $brand_primary;
+  background-color: $body_bg;
   padding-top: calc($font_size_base * $line_height_base * 2);
   padding-bottom: calc($font_size_base * $line_height_base * 2);
 }
@@ -5465,10 +5493,10 @@ input[type="search"]:focus {
 
 .topbar--large {
   color: #fff;
-  background: radial-gradient(at 25% 40%,
+  /* background: radial-gradient(at 25% 40%,
       lighten($hero_unit_mask_bg, 15%) 0,
       lighten($hero_unit_mask_bg, 10%) 50%,
-      lighten($hero_unit_mask_bg, 5%) 110%);
+      lighten($hero_unit_mask_bg, 5%) 110%); */
 }
 
 .topbar--large.topbar_image {
@@ -5484,8 +5512,8 @@ input[type="search"]:focus {
   display: block;
   width: 100%;
   height: 100%;
-  background: $hero_unit_mask_bg;
-  opacity: $hero_unit_mask_opacity;
+  /* background: $hero_unit_mask_bg;
+  opacity: $hero_unit_mask_opacity; */
   position: absolute;
   top: 0;
   left: 0;

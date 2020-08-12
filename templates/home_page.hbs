@@ -10,7 +10,7 @@
         {{#is name "Company Updates" }}
         <div class="column column--sm-4 category-list-item category-list-item__company_updates" id="{{id}}">
           <a class="category-list-item__link" href="{{url}}">
-            <div class="category-list-item__icon">
+            <div id="company_updates_icon" class="category-list-item__icon">
             </div>
             <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
             {{description}}
@@ -18,10 +18,9 @@
         </div>
         {{/is}}
         {{#is name "Team Pages " }}
-        <div class="column column--sm-4 category-list-item category-list-item__departments" id="{{id}}"
-          data="{{name}}">
+        <div class="column column--sm-4 category-list-item category-list-item__departments" id="{{id}}" data="{{name}}">
           <a class="category-list-item__link" href="{{url}}">
-            <div class="category-list-item__icon">
+            <div id="departments_icon" class="category-list-item__icon">
             </div>
             <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
             <p class="meta">{{excerpt description characters=50}}</p>
@@ -29,10 +28,9 @@
         </div>
         {{/is}}
         {{#is name "Resources & Onboarding " }}
-        <div class="column column--sm-4 category-list-item category-list-item__onboarding_and_resources"
-          id="{{id}}">
+        <div class="column column--sm-4 category-list-item category-list-item__onboarding_and_resources" id="{{id}}">
           <a class="category-list-item__link" href="{{url}}">
-            <div class="category-list-item__icon">
+            <div id="onboarding_and_resources_icon" class="category-list-item__icon">
             </div>
             <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
             <p class="meta">{{excerpt description characters=50}}</p>
@@ -42,7 +40,7 @@
         {{#is name "Global Markets" }}
         <div class="column column--sm-12 category-list-item category-list-item__global_markets" id="{{id}}">
           <a class="category-list-item__link" href="{{url}}">
-            <div class="category-list-item__icon">
+            <div id="global_markets_icon" class="category-list-item__icon">
             </div>
             <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
             <p class="meta">{{excerpt description characters=50}}</p>
@@ -94,7 +92,7 @@
             <div class="column column--xs-6 column--sm-12 fam-card-wrapper">
               <div class="apply-fam-card" id="fam-card__life">
                 <div class="life-at-applyboard-title">
-                Life at ApplyBoard
+                  Life at ApplyBoard
                 </div>
                 <iframe class="life-at-applyboard-video" src="https://www.youtube.com/embed/A0s0NUuv_l8" frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -104,10 +102,11 @@
           </div>
           <div class="row">
             <div class="column column--xs-6 column--sm-4 fam-card-wrapper">
-              <a id="creative-channels_link" href="https://applyguide.zendesk.com/hc/en-us/articles/360051802313-Executive-Creative-Channels-">
-              <div class="apply-fam-card" id="fam-card__creative_channels">
-                Creative Channels
-              </div>
+              <a id="creative-channels_link"
+                href="https://applyguide.zendesk.com/hc/en-us/articles/360051802313-Executive-Creative-Channels-">
+                <div class="apply-fam-card" id="fam-card__creative_channels">
+                  Creative Channels
+                </div>
               </a>
             </div>
             <div class="column column--xs-6 column--sm-8 fam-card-wrapper">

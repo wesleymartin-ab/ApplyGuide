@@ -31,14 +31,14 @@
           "type": "color",
           "description": "Brand primary color",
           "label": "Primary color",
-          "value": "rgba(62, 143, 205, 1)"
+          "value": "rgba(0, 68, 171, 1)"
         },
         {
           "identifier": "brand_secondary",
           "type": "color",
           "description": "Brand secondary color",
           "label": "Secondary color",
-          "value": "rgba(30, 121, 190, 1)"
+          "value": "rgba(0, 100, 225, 1)"
         },
         {
           "identifier": "text_color",
