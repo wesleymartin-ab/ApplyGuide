@@ -3226,28 +3226,28 @@ input[type="search"]:focus {
 }
 
 #company_updates_icon {
-  background: url("../assets/Company_Updates.png");
+  background: url($assets-company_updates-png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
 
 #departments_icon {
-  background: url("../assets/Departments.png");
+  background: url($assets-departments-png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
 
 #onboarding_and_resources_icon {
-  background: url("../assets/Onboarding.png");
+  background: url($assets-onboarding-png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
 
 #global_markets_icon {
-  background: url("../assets/Global_Markets.png");
+  background: url($assets-global_markets-png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -5500,7 +5500,7 @@ input[type="search"]:focus {
 }
 
 .topbar--large.topbar_image {
-  background: url($hero_homepage_image) no-repeat center;
+  background: url($assets-hero_homepage_image-png) no-repeat center;
   background-size: cover;
   background-position: 50% 30%;
   position: relative;
