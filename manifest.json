@@ -1,9 +1,21 @@
 {
   "name": "Revamp",
   "author": "Lotus Themes",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "api_version": 1,
   "settings": [
+    {
+      "label": "Media Links",
+      "variables": [
+        {
+          "identifier": "life_at_applyboard_youtube_id",
+          "type": "text",
+          "description": "The ID if the youtube video to display on the life at applyboard square",
+          "label": "Change this to alter homepage video",
+          "value": "A0s0NUuv_l8"
+        }
+      ]
+    },
     {
       "label": "Translations",
       "variables": [
