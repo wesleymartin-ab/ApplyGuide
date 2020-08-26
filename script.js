@@ -110,7 +110,6 @@
           organization_id: $("#request-organization-select").val()
         });
       }
-
       $(".image-with-lightbox").magnificPopup({
         type: "image",
         closeOnContentClick: true,
@@ -228,6 +227,21 @@
         $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=360006081614&sort_by=created_at", function (data) {
 
           $("#apply_buzz_link").attr("href", data["results"][0]["html_url"])
+        });
+        $.get("https://applyguide.zendesk.com/api/v2/help_center/en-us/categories.json?sort_by=updated_at&sort_order=asc", function (data) {
+          var targetCategories = [360002200674, 360002200694, 360001909753, 360002421414]
+
+          var categories = data["categories"].filter(function (c) {
+            return $.inArray(c["id"], targetCategories) !== -1;
+          })
+          var links = $(".global-markets-list a");
+          var names = $(".global-markets-list a h2");
+          var i = 0;
+          categories.forEach((c) => {
+            links.eq(i).attr("href", c["html_url"]);
+            names.eq(i).html(c["name"]);
+            i++;
+          })
         });
 
         // Update the most recent events
