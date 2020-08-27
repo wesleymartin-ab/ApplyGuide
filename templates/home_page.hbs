@@ -7,43 +7,47 @@
       <ul class="row updated-category-list">
         {{#each categories}}
         {{!-- TODO: Convert this to a method to check which category it is --}}
+        {{#is name "Global Markets" }}
+        <div class="column column--sm-12 category-list-item category-list-item_upper" id="{{id}}">
+          <a class="category-list-item__link" href="{{url}}">
+            <div id="global-markets-logo-column" class="column column--sm-3 column--sm-offset-2">
+              <div id="global_markets_icon" class="category-list-item__icon">
+              </div>
+            </div>
+            <div id="global-markets-text-column" class="column column--sm-6">
+              <h2 id="global-markets-text" class="h4 category-list-item__title">{{name}}</br></h2>
+              <p id="global-markets-description" class="meta">{{excerpt description}}</p>
+            </div>
+          </a>
+        </div>
+        {{/is}}
         {{#is name "Company Updates" }}
-        <div class="column column--sm-4 category-list-item category-list-item__company_updates" id="{{id}}">
+        <div class="column column--sm-4 category-list-item category-list-item_lower" id="{{id}}">
           <a class="category-list-item__link" href="{{url}}">
             <div id="company_updates_icon" class="category-list-item__icon">
             </div>
-            <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
-            {{description}}
+            <h2 class="h4 category-list-item__title" align="center">{{name}}</h2>
+            <p class="meta" align="center">{{excerpt description}}</p>
           </a>
         </div>
         {{/is}}
         {{#is name "Team Pages " }}
-        <div class="column column--sm-4 category-list-item category-list-item__departments" id="{{id}}" data="{{name}}">
+        <div class="column column--sm-4 category-list-item category-list-item_lower" id="{{id}}" data="{{name}}">
           <a class="category-list-item__link" href="{{url}}">
             <div id="departments_icon" class="category-list-item__icon">
             </div>
-            <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
-            <p class="meta">{{excerpt description characters=50}}</p>
+            <h2 class="h4 category-list-item__title" align="center">{{name}}</h2>
+            <p class="meta" align="center">{{excerpt description}}</p>
           </a>
         </div>
         {{/is}}
         {{#is name "Resources & Onboarding " }}
-        <div class="column column--sm-4 category-list-item category-list-item__onboarding_and_resources" id="{{id}}">
+        <div class="column column--sm-4 category-list-item category-list-item_lower" id="{{id}}">
           <a class="category-list-item__link" href="{{url}}">
             <div id="onboarding_and_resources_icon" class="category-list-item__icon">
             </div>
-            <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
-            <p class="meta">{{excerpt description characters=50}}</p>
-          </a>
-        </div>
-        {{/is}}
-        {{#is name "Global Markets" }}
-        <div class="column column--sm-12 category-list-item category-list-item__global_markets" id="{{id}}">
-          <a class="category-list-item__link" href="{{url}}">
-            <div id="global_markets_icon" class="category-list-item__icon">
-            </div>
-            <h2 class="h5 category-list-item__title" align="center"><br>{{name}}</br></h2>
-            <p class="meta">{{excerpt description characters=50}}</p>
+            <h2 class="h4 category-list-item__title" align="center">{{name}}</h2>
+            <p class="meta" align="center">{{excerpt description}}</p>
           </a>
         </div>
         {{/is}}
@@ -94,7 +98,8 @@
                 <div class="life-at-applyboard-title">
                   Featured Video
                 </div>
-                <iframe class="life-at-applyboard-video" src="https://www.youtube.com/embed/{{settings.life_at_applyboard_youtube_id}}" frameborder="0"
+                <iframe class="life-at-applyboard-video"
+                  src="https://www.youtube.com/embed/{{settings.life_at_applyboard_youtube_id}}" frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
               </div>

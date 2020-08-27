@@ -2173,6 +2173,7 @@ main {
 }
 
 .meta {
+  padding: 10px;
   font-size: 14px;
   color: #808488;
 }
@@ -3134,7 +3135,16 @@ input[type="search"]:focus {
   border-width: .5px;
   border-color: lightgrey;
   padding: 0px;
-  height: 250px;
+}
+
+.category-list-item_upper {
+  height: 230px;
+}
+
+.category-list-item_lower {
+  border-top-style: solid;
+  padding-top: 1px;
+  height: 300px;
 }
 
 
@@ -3154,12 +3164,13 @@ input[type="search"]:focus {
   font-weight: 400;
   color: $link_color;
   text-align: left;
-  height: 100%;
+  height: 230px;
   vertical-align: middle;
   background-color: white;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
+  padding-top: 20px;
 }
 
 .category-list-item__link .meta {
@@ -3169,11 +3180,12 @@ input[type="search"]:focus {
 .category-list-item__link:active,
 .category-list-item__link:focus,
 .category-list-item__link:hover {
-  -webkit-transform: scale(1.04) rotate(.0001deg);
-  transform: scale(1.04) rotate(.0001deg);
-  background-color: lightgrey;
+  /* -webkit-transform: scale(1.04) rotate(.0001deg); */
+  /* transform: scale(1.04) rotate(.0001deg); */
+  /* background-color: lightgrey; */
   box-shadow: 0 5px 20px 0 rgba(207, 67, 67, 0.15);
-  z-index: 3;
+  /* z-index: 3; */
+  background-color: rgb(62, 143, 205, .2);
 }
 
 @media (min-width: 768px) {
@@ -3187,11 +3199,9 @@ input[type="search"]:focus {
 }
 
 .category-list-item__title {
-  margin-bottom: 8px;
   font-weight: 600;
-  font-size: 16px;
+  margin: 0px;
   color: $text_color;
-  text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
@@ -3201,11 +3211,26 @@ input[type="search"]:focus {
   }
 }
 
+#global-markets-logo-column {
+  height: 100%;
+}
+
+#global-markets-text-column {
+  padding-top: 50px;
+}
+
+#global-markets-text {
+  text-align: left;
+  margin: 0px;
+}
+
+#global-markets-description {
+  padding-left: 0px;
+}
+
 .category-list-item__icon {
   width: auto;
-  height: 50%;
-  padding-top:10px;
-  margin: 0 auto 10px;
+  height: 60%;
 }
 
 .category-list-item__icon svg {
@@ -3251,27 +3276,7 @@ input[type="search"]:focus {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-}
-.category-list-item__global_markets {
-  border-top-style: solid;
-}
-
-.category-list-item__company_updates {
-  border-bottom-style: solid;
-  border-right-style: solid;
-}
-
-.category-list-item__departments {
-  border-bottom-style: solid;
-  border-left-style: solid;
-
-}
-
-.category-list-item__onboarding_and_resources {
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-right-style: solid;
-
+  height: 78.26%;
 }
 
 .container--grey {

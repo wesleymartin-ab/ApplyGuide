@@ -1,7 +1,7 @@
 {
   "name": "Revamp",
   "author": "Lotus Themes",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "api_version": 1,
   "settings": [
     {
@@ -83,8 +83,12 @@
           "type": "list",
           "description": "Font for body text",
           "label": "Text font",
-          "value": "'Open Sans', sans-serif",
+          "value": "'Montserrat', sans-serif",
           "options": [
+            {
+              "label": "Montserrat",
+              "value": "'Montserrat', sans-serif"
+            },
             {
               "label": "Open Sans",
               "value": "'Open Sans', sans-serif"
