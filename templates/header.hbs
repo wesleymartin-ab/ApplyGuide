@@ -25,6 +25,13 @@
             <div class="topbar__col topbar__menu">
               <div class="topbar__collapse" data-menu>
                 <div class="topbar__controls">
+                    <div id="search-bar">
+                      {{search
+                        class="search-box--small"
+                        submit=false
+                        placeholder=settings.search_placeholder
+                      }}
+                    </div>
                   {{#if settings.toggle_custom_link}}
                     <a href="{{#if settings.toggle_translations}}{{dc settings.topbar_custom_link_url}}{{else}}{{settings.topbar_custom_link_url}}{{/if}}" class="topbar__link">
                       {{#if settings.toggle_translations}}
@@ -37,6 +44,27 @@
                   {{link 'community' class='topbar__link'}}
                   {{link 'new_request' class='topbar__link submit-a-request'}}
                   {{user_info}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="topbar__inner container_nav_bar">
+            <div class="topbar__col topbar__menu">
+              <div class="topbar__collapse" data-menu>
+                <div class="topbar__controls category_row">
+                  <a class="topbar_category_link column column--xs-offset-2 column--xs-2" href="https://applyguide.zendesk.com/hc/en-us/categories/360002015413-Company-Updates">
+                    Updates
+                  </a>
+                  <a class="topbar_category_link column column--xs-2" href="https://applyguide.zendesk.com/hc/en-us/categories/360003928954-Departments-and-Teams">
+                    Departments
+                  </a>
+                  <a class="topbar_category_link column column--xs-2" href="https://applyguide.zendesk.com/hc/en-us/categories/360001884593-Resources-Onboarding-">
+                    Resources
+                  </a>
+                  <a class="topbar_category_link column column--xs-2" href="https://applyguide.zendesk.com/hc/en-us/categories/360004377613-Global-Markets">
+                    Global Markets
+                  </a>
                 </div>
               </div>
             </div>

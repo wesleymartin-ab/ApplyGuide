@@ -1,91 +1,62 @@
 <div class="container category-page">
   <div class="container-inner">
-    <div class="row clearfix">
-      <div class="column column--sm-8">
-        {{breadcrumbs}}
-      </div>
-      <div class="column column--sm-4">
-        {{search class='search-box--small' submit=false placeholder=settings.search_placeholder}}
-      </div>
-    </div>
-
-
     <div class="page-header page-header--center">
-      <h1 class="h2">{{category.name}}</h1>
+      {{#is category.name "Resources & Onboarding "}}
+        <div id="onboarding_and_resources_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      {{#is category.name "Company Updates"}}
+        <div id="company_updates_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      {{#is category.name "Departments and Teams"}}
+        <div id="departments_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      <h1 class="page-header__title">
+        {{category.name}}
+      </h1>
       {{#if category.description}}
-      <p class="page-description">{{category.description}}</p>
+        <p class="page-description">
+          {{category.description}}
+        </p>
       {{/if}}
     </div>
     {{#if sections}}
-    <div class="row section-tree clearfix">
-      <div class="column column--xs-4">
-        {{#each sections}}
-        <div class="section-list">
-          <h3 class="section__title">
-            {{#if internal}}
-            <span class="fas fa-lock" title="{{t 'internal'}}"></span>
-            {{/if}}
-            <a class="section__title-link" id="{{id}}">{{name}}</a>
-          </h3>
-          <div class="column column--xs-12">
-            {{#each sections}}
-            <div class="section__title">
-              {{#if internal}}
-              <span class="fas fa-lock" title="{{t 'internal'}}"></span>
-              {{/if}}
-              <a class="section__title-link" id="{{id}}">{{name}}</a>
-            </div>
-            {{/each}}
-          </div>
-        </div>
-        {{/each}}
-      </div>
-      <div class="column column--xs-8" id="floating-article-list">
-        <div id="inner-floating-article-list">
-          <h3 class="section__title">
-            Articles
-          </h3>
-          {{#each sections}}
-          {{#if articles}}
-          <div id="{{id}}-articles" style="display:none">
-            {{#each articles}}
-            <li class="article-list-item">
-              <a class="article-list-item__link" href="{{url}}">{{title}}</a>
-            </li>
-
-            {{/each}}
-          </div>
-          {{else}}
-          <span id="{{id}}-articles" style="display:none" class="article-list-item">Sorry, no articles here</span>
+      {{#each sections}}
+        <hr class="section-divider" />
+        <h4 class="section-header">
+          {{#if internal}}
+            <span class="fas fa-lock" title="{{t "internal"}}"></span>
           {{/if}}
+          <b>
+            {{name}}
+          </b>
+        </h4>
+        <ul class="promoted-articles__list row">
           {{#each sections}}
-
-          {{#if articles}}
-          <div id="{{id}}-articles" style="display:none">
-            {{#each articles}}
-            <li class="article-list-item {{#if promoted}}article-list-item--is-promoted{{/if}}">
-              <a class="article-list-item__link" href="{{url}}">{{title}}</a>
+            <li
+              class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4"
+            >
+              <div class="promoted-articles-item__content">
+                {{#if internal}}
+                  <span class="fas fa-lock" title="{{t "internal"}}"></span>
+                {{/if}}
+                <a class="promoted-articles-item__title" href="{{url}}">
+                  {{name}}
+                </a>
+              </div>
             </li>
-
-            {{/each}}
-          </div>
-          {{else}}
-          <span id="{{id}}-articles" style="display:none" class="article-list-item">Sorry, no articles here</span>
-          {{/if}}
           {{/each}}
-          {{/each}}
-        </div>
-      </div>
-    </div>
-
+        </ul>
+      {{/each}}
     {{else}}
-
-
-    <div class="column column--xs-12">
-      <p>
-        <i><a href="{{category.url}}">{{t 'empty'}}</a></i>
-      </p>
-    </div>
+      <div class="column column--xs-12">
+        <p>
+          <i>
+            <a href="{{category.url}}">
+              {{t "empty"}}
+            </a>
+          </i>
+        </p>
+      </div>
     {{/if}}
   </div>
 </div>

@@ -87,7 +87,7 @@
   <div class="container-inner">
     {{#is settings.toggle_promoted_articles "yes"}}
       <section class="promoted-articles" id="promoted-articles">
-        <h4 class="promoted-articles__title">
+        <h4 class="section-header">
           <b>
             {{t "promoted_articles"}}
           </b>
@@ -110,7 +110,7 @@
   </div>
   <div class="container-inner">
     <section class="apply-fam" id="apply-fam">
-      <h4 class="promoted-articles__title">
+      <h4 class="section-header">
         <b>
           Life at ApplyBoard
         </b>
@@ -123,8 +123,7 @@
                 Featured Video
                 <iframe
                   class="life-at-applyboard-video"
-                  src="https://www.youtube.com/embed/
-                    {{settings.life_at_applyboard_youtube_id}}"
+                  src="https://www.youtube.com/embed/{{settings.life_at_applyboard_youtube_id}}"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen

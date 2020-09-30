@@ -54,6 +54,8 @@
         var $correctSearch = $('.correct-search');
         var $searchBox = $('[data-search-box]');
 
+        $('#search-bar').hide();
+        $('.container_nav_bar').hide();
         if ($correctSearch.length) {
           $searchBox.find('.search').html($correctSearch.html());
           $searchBox.find('#query').focus();
@@ -202,24 +204,7 @@
         }
       });
 
-      $(window).scroll(function () {
-        $('#inner-floating-article-list').toggleClass('scrolling', $(window).scrollTop() + 168 > $('#floating-article-list').offset().top);
-      })
-
       // Wesleys work here on out
-
-      $(".section__title-link").on({
-        click: function () {
-          if ($revealedSection) {
-            $("#" + $revealedSection + "-articles").hide();
-          }
-          var id = $(event.target).attr('id');
-          $revealedSection = id;
-          console.log(id)
-          console.log(event.target)
-          $("#" + id + "-articles").show();
-        }
-      });
 
       $(document).ready(function () {
 
@@ -231,9 +216,7 @@
         $.get("https://applyguide.zendesk.com/api/v2/help_center/en-us/categories.json?sort_by=updated_at&sort_order=asc", function (data) {
           var targetCategories = [360002200674, 360002200694, 360001909753, 360002421414]
 
-          var categories = data["categories"].filter(function (c) {
-            return $.inArray(c["id"], targetCategories) !== -1;
-          })
+          var categories = data["categories"].filter(c => targetCategories.includes(c["id"]))
           var links = $(".global-markets-list a");
           var names = $(".global-markets-list a h2");
           var i = 0;
@@ -244,13 +227,10 @@
           })
         });
 
-        // Update the most recent events
 
-
-        $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=360006105173&sort_by=created_at", function (data) {
+        $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=360009375814&sort_by=created_at", function (data) {
           var events = data["results"];
           var i;
-          console.log(events)
           for (i = 0; i < ((events.length > 10) ? 10:events.length); i++) {
             $('#event-' + i).attr("onclick", `location.href='${events[i]["html_url"]}'`)
             $('#event-' + i).html(events[i]["title"])
