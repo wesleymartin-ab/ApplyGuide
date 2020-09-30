@@ -1,114 +1,143 @@
 <!-- Include Handlebars from a CDN -->
-<div class="categories-section container container--grey">
+<div class="categories-section container container--grey" data-home-page>
   <div class="container-inner">
     {{#is settings.toggle_category_list "yes"}}
-    {{#if categories}}
-    <div class="knowledge-base" id="category-list">
-      <ul class="row updated-category-list">
-        {{#each categories}}
-        {{!-- TODO: Convert this to a method to check which category it is --}}
-        {{#is name "Global Markets" }}
-        <div class="column column--sm-12 category-list-item category-list-item_upper" id="{{id}}">
-          <a class="category-list-item__link" href="{{url}}">
-            <div id="global-markets-logo-column" class="column column--sm-3 column--sm-offset-2">
-              <div id="global_markets_icon" class="category-list-item__icon">
-              </div>
-            </div>
-            <div id="global-markets-text-column" class="column column--sm-6">
-              <h2 id="global-markets-text" class="h4 category-list-item__title">{{name}}</br></h2>
-              <p id="global-markets-description" class="meta">{{excerpt description}}</p>
-            </div>
-          </a>
+      {{#if categories}}
+        <div class="knowledge-base" id="category-list">
+          <ul class="row updated-category-list">
+            {{#each categories}}
+              {{! TODO: Convert this to a method to check which category it is }}
+              {{#is name "Global Markets"}}
+                <div
+                  class="column column--sm-12 category-list-item"
+                  id="{{id}}"
+                >
+                  <a class="category-list-item__link" href="{{url}}">
+                    <div
+                      id="global_markets_icon"
+                      class="category-list-item__icon"
+                    ></div>
+                    <h2 class="h4 category-list-item__title" align="center">
+                      {{name}}
+                    </h2>
+                    <p class="meta" align="center">
+                      {{excerpt description}}
+                    </p>
+                  </a>
+                </div>
+              {{/is}}
+              {{#is name "Company Updates"}}
+                <div class="column column--sm-4 category-list-item" id="{{id}}">
+                  <a class="category-list-item__link" href="{{url}}">
+                    <div
+                      id="company_updates_icon"
+                      class="category-list-item__icon"
+                    ></div>
+                    <h2 class="h4 category-list-item__title" align="center">
+                      {{name}}
+                    </h2>
+                    <p class="meta" align="center">
+                      {{excerpt description}}
+                    </p>
+                  </a>
+                </div>
+              {{/is}}
+              {{#is name "Departments and Teams"}}
+                <div
+                  class="column column--sm-4 category-list-item"
+                  id="{{id}}"
+                  data="{{name}}"
+                >
+                  <a class="category-list-item__link" href="{{url}}">
+                    <div
+                      id="departments_icon"
+                      class="category-list-item__icon"
+                    ></div>
+                    <h2 class="h4 category-list-item__title" align="center">
+                      {{name}}
+                    </h2>
+                    <p class="meta" align="center">
+                      {{excerpt description}}
+                    </p>
+                  </a>
+                </div>
+              {{/is}}
+              {{#is name "Resources & Onboarding "}}
+                <div class="column column--sm-4 category-list-item" id="{{id}}">
+                  <a class="category-list-item__link" href="{{url}}">
+                    <div
+                      id="onboarding_and_resources_icon"
+                      class="category-list-item__icon"
+                    ></div>
+                    <h2 class="h4 category-list-item__title" align="center">
+                      {{name}}
+                    </h2>
+                    <p class="meta" align="center">
+                      {{excerpt description}}
+                    </p>
+                  </a>
+                </div>
+              {{/is}}
+            {{/each}}
+          </ul>
         </div>
-        {{/is}}
-        {{#is name "Company Updates" }}
-        <div class="column column--sm-4 category-list-item category-list-item_lower" id="{{id}}">
-          <a class="category-list-item__link" href="{{url}}">
-            <div id="company_updates_icon" class="category-list-item__icon">
-            </div>
-            <h2 class="h4 category-list-item__title" align="center">{{name}}</h2>
-            <p class="meta" align="center">{{excerpt description}}</p>
-          </a>
-        </div>
-        {{/is}}
-        {{#is name "Team Pages " }}
-        <div class="column column--sm-4 category-list-item category-list-item_lower" id="{{id}}" data="{{name}}">
-          <a class="category-list-item__link" href="{{url}}">
-            <div id="departments_icon" class="category-list-item__icon">
-            </div>
-            <h2 class="h4 category-list-item__title" align="center">{{name}}</h2>
-            <p class="meta" align="center">{{excerpt description}}</p>
-          </a>
-        </div>
-        {{/is}}
-        {{#is name "Resources & Onboarding " }}
-        <div class="column column--sm-4 category-list-item category-list-item_lower" id="{{id}}">
-          <a class="category-list-item__link" href="{{url}}">
-            <div id="onboarding_and_resources_icon" class="category-list-item__icon">
-            </div>
-            <h2 class="h4 category-list-item__title" align="center">{{name}}</h2>
-            <p class="meta" align="center">{{excerpt description}}</p>
-          </a>
-        </div>
-        {{/is}}
-        {{/each}}
-      </ul>
-
-    </div>
-    {{/if}}
+      {{/if}}
     {{/is}}
   </div>
-</div>
-<div class="container" data-home-page>
   <div class="container-inner">
     {{#is settings.toggle_promoted_articles "yes"}}
-    <section class="promoted-articles" id="promoted-articles">
-      <h4 class="promoted-articles__title">
-        <span class="fas fa-chart-line" title="{{t 'promoted'}}"></span>
-        <b>{{t 'promoted_articles'}}</b>
-      </h4>
-      <ul class="promoted-articles__list row">
-        {{#each promoted_articles}}
-        <li class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4">
-          <span class="fas fa-circle" title="{{t 'promoted'}}"></span>
-          <div class="promoted-articles-item__content ">
-            <a class="promoted-articles-item__title" href="{{url}}">{{title}}</a>
-          </div>
-        </li>
-        {{/each}}
-      </ul>
-    </section>
+      <section class="promoted-articles" id="promoted-articles">
+        <h4 class="promoted-articles__title">
+          <b>
+            {{t "promoted_articles"}}
+          </b>
+        </h4>
+        <ul class="promoted-articles__list row">
+          {{#each promoted_articles}}
+            <li
+              class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4"
+            >
+              <div class="promoted-articles-item__content">
+                <a class="promoted-articles-item__title" href="{{url}}">
+                  {{title}}
+                </a>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </section>
     {{/is}}
   </div>
-</div>
-
-
-<div class="container" data-home-page>
   <div class="container-inner">
     <section class="apply-fam" id="apply-fam">
       <h4 class="promoted-articles__title">
-        <span class="fas fa-star" title="{{t 'promoted'}}"></span>
-        <b>Life at ApplyBoard</b>
+        <b>
+          Life at ApplyBoard
+        </b>
       </h4>
       <div class="row" style="height: 500px">
         <div class="column column--xs-6 column--sm-6 column--sm-offset-1">
           <div class="row">
             <div class="column column--xs-6 column--sm-12 fam-card-wrapper">
               <div class="apply-fam-card" id="fam-card__life">
-                <div class="life-at-applyboard-title">
-                  Featured Video
-                </div>
-                <iframe class="life-at-applyboard-video"
-                  src="https://www.youtube.com/embed/{{settings.life_at_applyboard_youtube_id}}" frameborder="0"
+                Featured Video
+                <iframe
+                  class="life-at-applyboard-video"
+                  src="https://www.youtube.com/embed/
+                    {{settings.life_at_applyboard_youtube_id}}"
+                  frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="column column--xs-6 column--sm-4 fam-card-wrapper">
-              <a id="creative-channels_link"
-                href="https://applyguide.zendesk.com/hc/en-us/articles/360051802313-Executive-Creative-Channels-">
+              <a
+                id="creative-channels_link"
+                href="https://applyguide.zendesk.com/hc/en-us/articles/360051802313-Executive-Creative-Channels-"
+              >
                 <div class="apply-fam-card" id="fam-card__creative_channels">
                   Creative Channels
                   <div class="apply-fam-logo">
@@ -128,7 +157,6 @@
               </a>
             </div>
           </div>
-
         </div>
         <div class="column column--xs-6 column--sm-4">
           <div class="row">
@@ -143,7 +171,10 @@
               </a>
             </div>
             <div class="column column--xs-6 column--sm-6 fam-card-wrapper">
-              <a id="apply_clubs_link" href="https://applyguide.zendesk.com/hc/en-us/sections/360004978294-ApplyClubs">
+              <a
+                id="apply_clubs_link"
+                href="https://applyguide.zendesk.com/hc/en-us/sections/360004978294-ApplyClubs"
+              >
                 <div class="apply-fam-card" id="fam-card__clubs">
                   ApplyClubs
                   <div class="apply-fam-logo">
@@ -157,37 +188,19 @@
             <div class="column column--xs-6 column--sm-12 fam-card-wrapper">
               <div class="apply-fam-card" id="fam-card__events">
                 What's Happening at ApplyBoard
-                <li id="event-0" class="event-list-item">
-                  <a class="article-list-item__link" href=""></a>
-                </li>
-                <li id="event-1" class="event-list-item">
-                  <a class="article-list-item__link" href=""></a>
-                </li>
-                <li id="event-2" class="event-list-item">
-                  <a class="article-list-item__link" href=""></a>
-                </li>
-                <li id="event-3" class="event-list-item">
-                  <a class="article-list-item__link" href=""></a>
-                </li>
-                <li id="event-4" class="event-list-item">
-                  <a class="article-list-item__link" href=""></a>
-                </li>
-                <li id="event-5" class="event-list-item">
-                  <a class="article-list-item__link" href=""></a>
-                </li>
-                <li id="event-6" class="event-list-item">
-                  <a class="article-list-item__link" href=""></a>
-                </li>
-                <li id="event-7" class="event-list-item">
-                  <a class="article-list-item__link" href=""></a>
-                </li>
+                <li id="event-0" class="event-list-item" onclick=""></li>
+                <li id="event-1" class="event-list-item" onclick=""></li>
+                <li id="event-2" class="event-list-item" onclick=""></li>
+                <li id="event-3" class="event-list-item" onclick=""></li>
+                <li id="event-4" class="event-list-item" onclick=""></li>
+                <li id="event-5" class="event-list-item" onclick=""></li>
+                <li id="event-6" class="event-list-item" onclick=""></li>
+                <li id="event-7" class="event-list-item" onclick=""></li>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
   </div>
 </div>

@@ -252,9 +252,8 @@
           var i;
           console.log(events)
           for (i = 0; i < ((events.length > 10) ? 10:events.length); i++) {
-            console.log($('#event-' + i + " " + ".article-list-item__link"))
-            $('#event-' + i + " " + ".article-list-item__link").attr("href", events[i]["html_url"])
-            $('#event-' + i + " " + ".article-list-item__link").html(events[i]["title"])
+            $('#event-' + i).attr("onclick", `location.href='${events[i]["html_url"]}'`)
+            $('#event-' + i).html(events[i]["title"])
             $('#event-' + i).css("display", "block")
           }
         });

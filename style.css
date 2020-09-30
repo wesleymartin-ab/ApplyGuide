@@ -1525,9 +1525,14 @@ input[type="submit"]:active {
   }
 }
 
+.categories-section .container-inner {
+    display: flex;
+  }
+
 .container-inner {
   max-width: 1180px;
   margin: 0 auto;
+  margin-bottom: calc($font_size_base * $line_height_base * 2);
 }
 
 /* Tables */
@@ -2879,8 +2884,8 @@ input[type="search"]:focus {
   font-size: $font_size_base;
   color: #fff;
   text-transform: capitalize;
-  background-color: $button_color_1;
-  border-color: $button_color_1;
+  background-color: $brand_secondary;
+  border-color: $brand_secondary;
   border-radius: $border_radius_base;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -3134,16 +3139,7 @@ input[type="search"]:focus {
   margin: 0;
   border-width: .5px;
   border-color: lightgrey;
-  padding: 0px;
-}
-
-.category-list-item_upper {
-  height: 230px;
-}
-
-.category-list-item_lower {
-  border-top-style: solid;
-  padding-top: 1px;
+  padding: 10px;
   height: 300px;
 }
 
@@ -3170,7 +3166,22 @@ input[type="search"]:focus {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
-  padding-top: 20px;
+  line-height: 1.4;
+
+  border-radius: $border_radius_base;
+  border: 3px;
+  vertical-align: middle;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0px 3px 9px 3px rgba(0, 0, 0, 0.12);
+
+  padding: 30px 10px 30px 10px;
+}
+
+@media (max-width: 767px) {
+  .category-list-item__link {
+    height: 130px;
+  }
 }
 
 .category-list-item__link .meta {
@@ -3180,12 +3191,9 @@ input[type="search"]:focus {
 .category-list-item__link:active,
 .category-list-item__link:focus,
 .category-list-item__link:hover {
-  /* -webkit-transform: scale(1.04) rotate(.0001deg); */
-  /* transform: scale(1.04) rotate(.0001deg); */
-  /* background-color: lightgrey; */
-  box-shadow: 0 5px 20px 0 rgba(207, 67, 67, 0.15);
-  /* z-index: 3; */
-  background-color: rgb(62, 143, 205, .2);
+  background-color: rgba(0, 100, 225, .3);
+  text-decoration-color: #fff;
+  box-shadow: 0px 3px 9px 3px rgba(0, 0, 0, 0.12);
 }
 
 @media (min-width: 768px) {
@@ -3200,6 +3208,7 @@ input[type="search"]:focus {
 
 .category-list-item__title {
   font-weight: 600;
+  padding: 5px;
   margin: 0px;
   color: $text_color;
 }
@@ -3224,17 +3233,15 @@ input[type="search"]:focus {
   margin: 0px;
 }
 
-#global-markets-description {
-  padding-left: 0px;
-}
-
 .category-list-item__icon {
   width: auto;
-  height: 60%;
+  margin-bottom: 20px;
+  height: 40%;
 }
 
 .category-list-item__icon svg {
   width: auto;
+  margin: 20px;
   height: 100%;
 }
 
@@ -3276,7 +3283,6 @@ input[type="search"]:focus {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  height: 78.26%;
 }
 
 .container--grey {
@@ -3311,6 +3317,10 @@ input[type="search"]:focus {
 .section__title-link {
   color: #666;
   cursor: pointer;
+}
+
+.section__title-link:hover {
+  color: $link_color;
 }
 
 .section-header {
@@ -6466,7 +6476,6 @@ input[type="search"]:focus {
   padding-left: 0;
   margin-right: 0;
   margin-left: 0;
-  list-style: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-flow: row wrap;
@@ -6489,6 +6498,9 @@ input[type="search"]:focus {
   -webkit-box-direction: normal;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
+  list-style-type: none;
+  list-style: none;
+  padding-top: 8px;
 }
 
 .promoted-articles-item .fa-circle {
@@ -6504,7 +6516,8 @@ input[type="search"]:focus {
 }
 
 .promoted-articles__title {
-  font-weight: 400;
+  font-weight: 600;
+  font-size: calc($font_size_base * 2);
   text-align: left;
 }
 
@@ -6520,10 +6533,21 @@ input[type="search"]:focus {
 
 .promoted-articles-item__title {
   display: block;
-  color: black;
+  color: $brand_secondary;
   max-width: 360px;
   margin-bottom: calc($font_size_base * $line_height_base / 4);
-  font-size: 16px;
+  font-size: $font_size_base;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.promoted-articles-item__title:hover {
+  color: black;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: visible;
 }
 
 .callout {
@@ -7686,7 +7710,7 @@ span.sidenav__section-name {
 }
 
 .apply-fam-card {
-  min-height: 200px;
+  min-height: 250px;
   padding: 10px;
   border-radius: $border_radius_base;
   border: 3px;
@@ -7695,6 +7719,11 @@ span.sidenav__section-name {
   vertical-align: middle;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  font-size: $font_size_base;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .apply-fam-logo {
@@ -7702,7 +7731,7 @@ span.sidenav__section-name {
   border-radius: $border_radius_base;
   border-style: solid; */
   height: 130px;
-  margin: 10px;
+  margin: 35px 10px 10px 10px;
   text-align: center;
   vertical-align: middle;
   line-height: 130px; 
@@ -7723,12 +7752,16 @@ span.sidenav__section-name {
 
 #fam-card__life {
   min-height: 400px;
-  border-color: rgb(62, 143, 205);
-  background-color: rgb(62, 143, 205, .2);
-  color: rgb(62, 143, 205);
+  border-color: $brand_primary;
+  background-color: rgba(0, 100, 225, .2);
+  color: $brand_primary;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+#fam-card__life:hover {
+  background-color: rgba(0, 100, 225, .3);
 }
 
 #fam-card__creative_channels {
@@ -7737,10 +7770,18 @@ span.sidenav__section-name {
   color: rgb(255, 198, 48);
 }
 
+#fam-card__creative_channels:hover {
+  background-color: rgb(255, 198, 48, .3);
+}
+
 #fam-card__blog {
   border-color: rgb(255, 60, 92);
   background-color: rgb(255, 60, 92, .2);
   color: rgb(255, 60, 92);
+}
+
+#fam-card__blog:hover {
+  background-color: rgb(255, 60, 92, .3);
 }
 
 #fam-card__committees {
@@ -7748,11 +7789,18 @@ span.sidenav__section-name {
   background-color: rgb(0, 183, 127, .2);
   color: rgb(0, 183, 127);
 }
+#fam-card__committees:hover {
+  background-color: rgb(0, 183, 127, .3);
+}
 
 #fam-card__clubs,
 #fam-card__clubs-logo {
   border-color: rgb(255, 60, 92);
   color: rgb(255, 60, 92);
+}
+
+#fam-card__clubs:hover {
+  background-color: rgb(255, 60, 92, .3);
 }
 
 #fam-card__clubs {
@@ -7762,36 +7810,15 @@ span.sidenav__section-name {
 #fam-card__events {
   min-height: 400px;
   max-height: 400px;
-  border-color: rgb(30, 121, 190);
-  background-color: rgb(30, 121, 190, .2);
-  color: rgb(30, 121, 190);
+  border-color: $brand_primary;
+  background-color: rgba(0, 100, 225, .2);
+  color: $brand_primary;
   overflow-y: hidden;
   width: 100%;
 }
 
-
-#fam-card__life:hover {
-  background-color: rgb(62, 143, 205, .3);
-}
-
-#fam-card__creative_channels:hover {
-  background-color: rgb(255, 198, 48, .3);
-}
-
-#fam-card__blog:hover {
-  background-color: rgb(255, 60, 92, .3);
-}
-
-#fam-card__committees:hover {
-  background-color: rgb(0, 183, 127, .3);
-}
-
-#fam-card__clubs:hover {
-  background-color: rgb(255, 60, 92, .3);
-}
-
 #fam-card__events:hover {
-  background-color: rgb(30, 121, 190, .3);
+  background-color: rgba(0, 100, 225, .3);
 }
 
 .apply-fam {
@@ -7813,8 +7840,15 @@ span.sidenav__section-name {
 
 .event-list-item {
   margin: 15px;
+  display: none;
   font-size: $font_size_base;
-  color: $link_color;
+  color: $brand_primary;
+  cursor: pointer;
+  white-space: break-spaces;
+}
+
+.event-list-item:hover {
+  color: black;
 }
 
 .row-container {
@@ -7822,7 +7856,7 @@ span.sidenav__section-name {
   width: 100%;
   height: 100%;
   flex-direction: column;
-  background-color: blue;
+  background-color: $brand_primary;
   overflow: hidden;
 }
 

@@ -76,14 +76,14 @@
           "type": "text",
           "description": "Size for body text",
           "label": "Text size",
-          "value": "16px"
+          "value": "18px"
         },
         {
           "identifier": "font_family_base",
           "type": "list",
           "description": "Font for body text",
           "label": "Text font",
-          "value": "'Montserrat', sans-serif",
+          "value": "'Open Sans', sans-serif",
           "options": [
             {
               "label": "Montserrat",
@@ -124,7 +124,7 @@
           "type": "text",
           "description": "Space between the lines of text",
           "label": "Text line height",
-          "value": "1.05"
+          "value": "1.25"
         }
       ]
     },
@@ -233,8 +233,8 @@
         {
           "identifier": "toggle_promoted_articles",
           "type": "list",
-          "description": "Toggle Promoted articles component",
-          "label": "Show Promoted articles",
+          "description": "Toggle Promoted Articles component",
+          "label": "Show Promoted Articles",
           "value": "yes",
           "options": [
             {
