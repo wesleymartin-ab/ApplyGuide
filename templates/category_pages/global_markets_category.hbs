@@ -1,33 +1,61 @@
 <div class="container category-page">
   <div class="container-inner">
-    <div class="row clearfix">
-      <div class="column column--sm-8">
-        {{breadcrumbs}}
-      </div>
-      <div class="column column--sm-4">
-        {{search
-          class="search-box--small"
-          submit=false
-          placeholder=settings.search_placeholder
-        }}
-      </div>
-    </div>
     <div class="page-header page-header--center">
-      <div class="section-header">
-        <div class="section-header__col section-header__col--main">
-          <h1 class="h2">
-            {{category.name}}
-          </h1>
-        </div>
-      </div>
+      {{#is category.name "Global Markets"}}
+      <div id="global_markets_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      <h1 class="page-header__title">
+        {{category.name}}
+      </h1>
+      {{#if category.description}}
+      <p class="page-description">
+        {{category.description}}
+      </p>
+      {{/if}}
     </div>
     {{#if category.sections}}
-    <ul class="row section-list">
+    <ul class="row updated-category-list">
+      <li class="column column--sm-6 column--md-4 category-list-item global-markets-list">
+        <a class="category-list-item__link" href="https://applyguide.zendesk.com/hc/en-us/categories/360001909753-Canadian-Schools">
+          <div id="canada_icon" class="category-list-item__icon"></div>
+          <h2 class="h4 category-list-item__title" align="center">Canada</h2>
+          <p class="meta"></p>
+        </a>
+      </li>
+      <li class="column column--sm-6 column--md-4 category-list-item global-markets-list">
+        <a class="category-list-item__link" href="https://applyguide.zendesk.com/hc/en-us/categories/360002200674-USA-Schools-">
+          <div id="us_icon" class="category-list-item__icon"></div>
+          <h2 class="h4 category-list-item__title" align="center">United States</h2>
+          <p class="meta"></p>
+        </a>
+      </li>
+      <li class="column column--sm-6 column--md-4 category-list-item global-markets-list">
+        <a class="category-list-item__link" href="https://applyguide.zendesk.com/hc/en-us/categories/360002421414-United-Kingdom-Schools">
+          <div id="uk_icon" class="category-list-item__icon"></div>
+          <h2 class="h4 category-list-item__title" align="center">United Kingdom</h2>
+          <p class="meta"></p>
+        </a>
+      </li>
+      <li class="column column--sm-6 column--md-4 category-list-item global-markets-list">
+        <a class="category-list-item__link" href="https://applyguide.zendesk.com/hc/en-us/categories/360002200694-Australian-Schools-">
+          <div id="australia_icon" class="category-list-item__icon"></div>
+          <h2 class="h4 category-list-item__title" align="center">Australia</h2>
+          <p class="meta"></p>
+        </a>
+      </li>
       {{#each category.sections}}
-      {{#each sections}}
-      <li class="column column column--sm-6 column--md-4 section-list-item">
-        <a class="section-list-item__link" href="{{url}}">
-          <h2 class="h5 section-list-item__title">
+      <li class="column column--sm-6 column--md-4 category-list-item global-markets-list">
+        <a class="category-list-item__link" href="{{url}}">
+          {{#is name 'Industry Resources'}}
+            <div id="industry_icon" class="category-list-item__icon"></div>
+          {{/is}}
+          {{#is name 'Market Information'}}
+            <div id="market_info_icon" class="category-list-item__icon"></div>
+          {{/is}}
+          {{#is name 'Requirements Library '}}
+            <div id="requirements_icon" class="category-list-item__icon"></div>
+          {{/is}}
+          <h2 class="h4 category-list-item__title" align="center">
             {{name}}
           </h2>
           <p class="meta">
@@ -36,41 +64,6 @@
         </a>
       </li>
       {{/each}}
-      {{/each}}
-    </ul>
-    <ul class="row section-list">
-      <li class="column column column--sm-6 column--md-4  section-list-item global-markets-list">
-        <a class="section-list-item__link" href="">
-          <h2 class="h5 section-list-item__title">
-          </h2>
-          <p class="meta">
-          </p>
-        </a>
-      </li>
-      <li class="column column column--sm-6 column--md-4  section-list-item global-markets-list">
-        <a class="section-list-item__link" href="">
-          <h2 class="h5 section-list-item__title">
-          </h2>
-          <p class="meta">
-          </p>
-        </a>
-      </li>
-      <li class="column column column--sm-6 column--md-4  section-list-item global-markets-list">
-        <a class="section-list-item__link" href="">
-          <h2 class="h5 section-list-item__title">
-          </h2>
-          <p class="meta">
-          </p>
-        </a>
-      </li>
-      <li class="column column column--sm-6 column--md-4  section-list-item global-markets-list">
-        <a class="section-list-item__link" href="">
-          <h2 class="h5 section-list-item__title">
-          </h2>
-          <p class="meta">
-          </p>
-        </a>
-      </li>
     </ul>
     {{else}}
     <div class="column column--xs-12">

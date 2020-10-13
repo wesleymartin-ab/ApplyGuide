@@ -1,0 +1,68 @@
+<div class="container category-page">
+  <div class="container-inner">
+    <div class="page-header page-header--center">
+      {{#is category.name "Canadian Schools"}}
+        <div id="canada_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      {{#is category.name "Australian Schools "}}
+        <div id="australia_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      {{#is category.name "USA Schools "}}
+        <div id="us_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      {{#is category.name "United Kingdom Schools"}}
+        <div id="uk_icon" class="category-list-item__icon"></div>
+      {{/is}}
+
+      <h1 class="page-header__title">
+        {{category.name}}
+      </h1>
+      {{#if category.description}}
+        <p class="page-description">
+          {{category.description}}
+        </p>
+      {{/if}}
+      <div class="container-inner">
+        <div class="row glossary_links">
+          <p class="meta">
+            Filter By
+          </p>
+          <div id="*" class="column glossary_selector">
+            All
+          </div>
+        </div>
+      </div>
+    </div>
+    {{#if category.sections}}
+      <ul class="row section-list school-list">
+        {{#each category.sections}}
+          <li
+            id={{name}}
+            class="column column--sm-6 column--md-4 section-list-item"
+          >
+            <a class="section-list-item__link" href="{{url}}">
+              <h2 class="h5 section-list-item__title">
+                {{name}}
+              </h2>
+              {{#if false}}
+              <p class="meta">
+                {{description}}
+              </p>
+              {{/if}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <div class="column column--xs-12">
+        <p>
+          <i>
+            <a href="{{category.url}}">
+              {{t "empty"}}
+            </a>
+          </i>
+        </p>
+      </div>
+    {{/if}}
+  </div>
+</div>

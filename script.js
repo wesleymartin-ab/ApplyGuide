@@ -48,7 +48,7 @@
       var $topSearchBar = $(".topbar__search-bar");
       var $topSearchBarQuery = $topSearchBar.find("#query");
       var $topSearchBarBtn = $(".topbar__btn-search");
-      var $revealedSection = "";
+      var $schools = []
 
       if (Utils.isHomepage() || $('[data-search-results]').length) {
         var $correctSearch = $('.correct-search');
@@ -63,6 +63,29 @@
         $topbar.addClass("topbar--large");
         $heroUnit.removeClass(HC_SETTINGS.css.hiddenClass);
         $("[data-footer-submit-ticket]").removeClass(HC_SETTINGS.css.hiddenClass);
+
+        // Wesleys work here on out
+
+        $(document).ready(function () {
+
+          // Update the most recent buzz link
+          $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=360006081614&sort_by=created_at", function (data) {
+
+            $("#apply_buzz_link").attr("href", data["results"][0]["html_url"])
+          });
+
+          $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=360009375814&sort_by=created_at", function (data) {
+            var events = data["results"];
+            var i;
+            for (i = 0; i < ((events.length > 10) ? 10 : events.length); i++) {
+              $('#event-' + i).attr("onclick", `location.href='${events[i]["html_url"]}'`)
+              $('#event-' + i).html(events[i]["title"])
+              $('#event-' + i).css("display", "block")
+            }
+          });
+        })
+
+
       } else {
         $topbar.addClass("topbar--small");
       }
@@ -206,38 +229,81 @@
 
       // Wesleys work here on out
 
-      $(document).ready(function () {
+      function update_glossary(letter) {
+        console.log(letter);
+      }
 
-        // Update the most recent buzz link
-        $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=360006081614&sort_by=created_at", function (data) {
+      function populate_glossary() {
 
-          $("#apply_buzz_link").attr("href", data["results"][0]["html_url"])
-        });
-        $.get("https://applyguide.zendesk.com/api/v2/help_center/en-us/categories.json?sort_by=updated_at&sort_order=asc", function (data) {
-          var targetCategories = [360002200674, 360002200694, 360001909753, 360002421414]
+        for (let letter = 0; letter < 26; letter++) {
+          var l = String.fromCharCode(65 + letter)
+          $('.glossary_links').append("<div id='"+l+"' class='column glossary_selector'> "+l+" </div>")
+        }
+      }
+      
+      $(document).ready(() => {
+        $schools = $('.section-list-item');
+        var i = 0;
+        var letters = $('.glossary_selector')
+        letters.each(() => {
+          var l = letters.eq(i).attr("id");
+          if (l !== '*' && $('.section-list-item[id^="'+l+'"]').length === 0) {
+            letters.eq(i).addClass('glossary_no_elements');
+          }
+          i++;
+        })
 
-          var categories = data["categories"].filter(c => targetCategories.includes(c["id"]))
-          var links = $(".global-markets-list a");
-          var names = $(".global-markets-list a h2");
-          var i = 0;
-          categories.forEach((c) => {
-            links.eq(i).attr("href", c["html_url"]);
-            names.eq(i).html(c["name"]);
-            i++;
-          })
-        });
-
-
-        $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=360009375814&sort_by=created_at", function (data) {
+        $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section="+section_id+"&sort_by=created_at", function (data) {
           var events = data["results"];
           var i;
-          for (i = 0; i < ((events.length > 10) ? 10:events.length); i++) {
-            $('#event-' + i).attr("onclick", `location.href='${events[i]["html_url"]}'`)
-            $('#event-' + i).html(events[i]["title"])
-            $('#event-' + i).css("display", "block")
+          
+          for (i = 0; i < events.length; i++) {
+
+            var classes = window.location.href === events[i]["html_url"] ? "article_sidebar_link current_sidebar_link" : "article_sidebar_link"
+            
+            var html_text = `<li
+              class="promoted-articles-item column column--xs-12"
+            >
+              <div class="promoted-articles-item__content">
+                <a class="${classes}" href="${events[i]["html_url"]}">
+                  ${events[i]["title"]}
+                </a>
+              </div>
+            </li>`
+            $('#section_articles').append(html_text);
           }
         });
+        
+        $('.glossary_selector').click((elem) => {
+          $schools.hide();
+          var l = elem.target.id;
+          if (l !== '*') {
+            $schools = $('.section-list-item[id^="'+l+'"]');
+          }
+          else {
+            $schools = $('.section-list-item');
+          }
+          $schools.show();
+        })
+
       })
+
+      // Used to update the category cards so they remain squares
+      function resize_cards() {
+        if (document.documentElement.clientWidth > 767) {
+          var cw = $('.category-list-item').width();
+          $('.category-list-item').css({
+            'height': cw + 'px'
+          });
+        }
+      }
+      populate_glossary();
+      resize_cards();
+
+      $(window).resize(function () {
+        resize_cards();
+      });
+
     });
 
   }, {}]

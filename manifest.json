@@ -83,7 +83,7 @@
           "type": "list",
           "description": "Font for body text",
           "label": "Text font",
-          "value": "'Open Sans', sans-serif",
+          "value": "'Montserrat', sans-serif",
           "options": [
             {
               "label": "Montserrat",
@@ -192,7 +192,7 @@
           "type": "color",
           "description": "Color for buttons",
           "label": "Button bordered",
-          "value": "rgba(62, 143, 205, 1)"
+          "value": "rgba(0,99,227,1)"
         }
       ]
     },

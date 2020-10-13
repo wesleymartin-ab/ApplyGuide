@@ -1,18 +1,12 @@
+
 <div class="container article-page" data-article-page>
+  <script>
+  section_id = "{{section.id}}"
+</script>
   <div class="container-inner">
     <div class="row clearfix">
-  <div class="column column--sm-8">
-    {{breadcrumbs}}
-  </div>
-  <div class="column column--sm-4">
-    {{search class='search-box--small' submit=false placeholder=settings.search_placeholder}}
-  </div>
-</div>
-
-
     <div class="row clearfix">
-      <div class="column column--sm-4">
-          <div data-sidenav></div>
+      <div id="section_articles" class="column column--sm-4">
       </div>
       <div class="column column--sm-8">
         <article class="article clearfix" itemscope itemtype="http://schema.org/Article">
@@ -55,16 +49,16 @@
 
           <div class="article__attachments">
             {{#if attachments}}
-  <ul class="list-unstyled attachment-list">
-    {{#each attachments}}
-      <li class="attachment-list__item">
-        <span class="fas fa-paperclip attachment-list__icon"></span>
-        <a href="{{url}}" target="_blank">{{name}}</a>
-        <div class="meta">({{size}})</div>
-      </li>
-    {{/each}}
-  </ul>
-{{/if}}
+              <ul class="list-unstyled attachment-list">
+                {{#each attachments}}
+                  <li class="attachment-list__item">
+                    <span class="fas fa-paperclip attachment-list__icon"></span>
+                    <a href="{{url}}" target="_blank">{{name}}</a>
+                    <div class="meta">({{size}})</div>
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
           </div>
 
         </article>
