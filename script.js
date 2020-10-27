@@ -48,6 +48,7 @@
       var $topSearchBar = $(".topbar__search-bar");
       var $topSearchBarQuery = $topSearchBar.find("#query");
       var $topSearchBarBtn = $(".topbar__btn-search");
+      var $searchButton = $('#clicky_search_thing');
       var $schools = []
 
       if (Utils.isHomepage() || $('[data-search-results]').length) {
@@ -56,6 +57,8 @@
 
         $('#search-bar').hide();
         $('.container_nav_bar').hide();
+
+        $('.topbar__nav--white').css('background', 'white');
         if ($correctSearch.length) {
           $searchBox.find('.search').html($correctSearch.html());
           $searchBox.find('#query').focus();
@@ -121,6 +124,9 @@
         search();
       });
 
+      $searchButton.click(function (e) {
+        search();
+      })
       // Submit search on input enter
       $("#quick-search").on("keypress", function (e) {
         if (e.which === 13) {
@@ -218,13 +224,13 @@
       });
 
       $(window).on("scroll resize", function () {
-        var scrolled = $(window).scrollTop();
-        var $topbarNav = $(".topbar__nav");
-        if (scrolled > $topbarNav.outerHeight()) {
-          $topbarNav.addClass("topbar__nav--white");
-        } else {
-          $topbarNav.removeClass("topbar__nav--white");
-        }
+        // var scrolled = $(window).scrollTop();
+        // var $topbarNav = $(".topbar__nav");
+        // if (scrolled > $topbarNav.outerHeight()) {
+        //   $topbarNav.addClass("topbar__nav--scrolled");
+        // } else {
+        //   $topbarNav.removeClass("topbar__nav--scrolled");
+        // }
       });
 
       // Wesleys work here on out

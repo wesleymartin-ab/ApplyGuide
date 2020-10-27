@@ -1,14 +1,14 @@
 <div class="layout">
   <div class="layout__head">
     <header class="topbar is-hidden {{#is settings.hero_show_image 'yes'}}topbar_image{{/is}}" data-topbar>
-      <div class="topbar__nav container">
+      <div class="topbar__nav topbar__nav--white container">
         <div class="container-inner topbar__container-inner">
           <div class="topbar__inner">
             <div class="topbar__col clearfix">
               <div class="logo-wrapper">
                 <div class="logo">
                   {{#link 'help_center'}}
-                    <img src="{{settings.logo}}" alt="logo" data-svg>
+                    <img src="{{settings.full_logo}}" alt="logo" data-svg>
                   {{/link}}
                 </div>
               </div>
@@ -82,7 +82,8 @@
                 {{settings.hero_title}}
               {{/if}}
             </div>
-            {{search instant=true placeholder=settings.search_placeholder}}
+            {{search instant=true submit=false placeholder=settings.search_placeholder}}
+            <span id="clicky_search_thing"></span>
           </div>
         </div>
       </div>

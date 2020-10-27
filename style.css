@@ -2740,7 +2740,7 @@ main {
 .hero-unit {
   position: relative;
   z-index: 3;
-  padding: calc(65px + 2%) 15px 8%;
+  padding: max(8%, 256px) 15px max(8%, 256px);
   overflow: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -2807,13 +2807,26 @@ main {
 .search:before {
   position: absolute;
   top: 50%;
-  left: 10px;
-  width: 24px;
-  height: 24px;
+  width: 17px;
+  height: 17px;
   content: "";
-  background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2223%22%20height%3D%2224%22%20viewBox%3D%220%200%2023%2024%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate%28-6%20-2%29%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2219.889%22%20cy%3D%2211.611%22%20r%3D%228%22%20stroke%3D%22%23BDBDBD%22%20stroke-width%3D%222%22%20transform%3D%22rotate%2845%2019.89%2011.61%29%22%3E%3C/circle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23BDBDBD%22%20fill-rule%3D%22nonzero%22%20d%3D%22M9.34328327%2C15.6566781%20L11.3432833%2C15.6566781%20L11.3432833%2C25.6606781%20C11.3432833%2C26.2106781%2010.8992833%2C26.6566781%2010.3432833%2C26.6566781%20C9.79128327%2C26.6566781%209.34328327%2C26.2116781%209.34328327%2C25.6606781%20L9.34328327%2C15.6566781%20Z%22%20transform%3D%22rotate%2845%2010.343%2021.157%29%22%3E%3C/path%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/svg%3E) no-repeat;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  margin-right: 8px;
+  background: url($assets-search-svg) no-repeat;
+  -webkit-transform: translateY(-50%) scale(1.25, 1.25);
+  transform: translateY(-50%) scale(1.25, 1.25);
+}
+
+#clicky_search_thing {
+  position: absolute;
+  top: 80%;
+  width: 22px;
+  height: 22px;
+  right: 10px;
+  cursor: pointer;
+  content: "";
+  margin-right: 8px;
+  -webkit-transform: translateY(-50%) scale(1.25, 1.25);
+  transform: translateY(-50%) scale(1.25, 1.25);
 }
 
 .searchbox-suggestions ul {
@@ -2846,7 +2859,8 @@ input[type="search"]:focus {
 
 .search-box--hero-unit {
   z-index: 2;
-  max-width: 720px;
+  width: 50vw;
+  max-width: 600px;
   margin: 0 auto;
   -webkit-transition: top 0.3s ease;
   transition: top 0.3s ease;
@@ -2859,12 +2873,12 @@ input[type="search"]:focus {
 }
 
 .search-box--hero-unit .search:before {
-  left: 20px;
+  right: 10px;
 }
 
 .search-box--hero-unit #query {
   height: 50px;
-  padding: 0 55px;
+  padding: 0 24px;
   background-color: #fff;
   border-color: #fff;
   -webkit-transition: border 0.3s ease, background-color 0.3s ease;
@@ -5239,7 +5253,7 @@ input[type="search"]:focus {
 }
 
 .topbar__container-inner {
-  margin-bottom: calc($font_size_base * $line_height_base);
+  margin-bottom: 0;
   position: relative;
   z-index: 4;
 }
@@ -5268,8 +5282,16 @@ input[type="search"]:focus {
 }
 
 .topbar__nav--white {
-  background-color: #fff;
+  background: linear-gradient(to top, $brand_secondary calc(60px + $font_size_base * $line_height_base), white 0%);
 }
+
+@media (min-width: 768px) {
+  .topbar__nav--white {
+    background: linear-gradient(to top, $brand_secondary calc(60px + 2 * 17.5px), white 0%);
+  }
+}
+
+
 
 .topbar--small .topbar__nav {
   background-color: #fff;
@@ -5343,7 +5365,9 @@ input[type="search"]:focus {
 .topbar__nav--white .help-center-name,
 .topbar--small .topbar__nav .help-center-name,
 .topbar__nav--filled .help-center-name {
-  color: $text_color;
+  color: $brand_secondary;
+  padding: 4px 0px 4px 8px;
+  border-left: 2px solid $brand_secondary;
 }
 
 .topbar__col {
@@ -5516,8 +5540,8 @@ input[type="search"]:focus {
 
 .topbar--large.topbar_image {
   background: url($assets-hero_homepage_image-png) no-repeat center;
-  background-size: cover;
-  background-position: bottom;
+  background-size: 100% auto;
+  background-position-y: 84px;
   position: relative;
   z-index: 2;
 }

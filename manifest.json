@@ -173,14 +173,14 @@
           "type": "text",
           "description": "Text above the search field",
           "label": "Hero unit title",
-          "value": "What can we help you with?"
+          "value": "How can we help?"
         },
         {
           "identifier": "search_placeholder",
           "type": "text",
           "description": "Placeholder text for the search field",
           "label": "Search Placeholder",
-          "value": "Type your question here..."
+          "value": "Search Support Help"
         }
       ]
     },
@@ -200,7 +200,7 @@
       "label": "Brand",
       "variables": [
         {
-          "identifier": "logo",
+          "identifier": "full_logo",
           "type": "file",
           "description": "Company logo",
           "label": "Logo"
@@ -210,7 +210,7 @@
           "type": "text",
           "description": "Height of the logo",
           "label": "Logo height",
-          "value": "50px"
+          "value": "46px"
         },
         {
           "identifier": "favicon",
@@ -328,7 +328,7 @@
           "type": "text",
           "description": "Help center title",
           "label": "Help center title",
-          "value": "ApplyGuide"
+          "value": "Knowledge Base"
         },
         {
           "identifier": "toggle_custom_link",
