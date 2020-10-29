@@ -66,7 +66,7 @@
         $topbar.addClass("topbar--large");
         $heroUnit.removeClass(HC_SETTINGS.css.hiddenClass);
         $("[data-footer-submit-ticket]").removeClass(HC_SETTINGS.css.hiddenClass);
-
+        $('.layout__content').css('padding-top', 'calc(18px * 1.25 * 5)')
         // Wesleys work here on out
 
         $(document).ready(function () {
@@ -258,27 +258,28 @@
           }
           i++;
         })
-
-        $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section="+section_id+"&sort_by=created_at", function (data) {
-          var events = data["results"];
-          var i;
-          
-          for (i = 0; i < events.length; i++) {
-
-            var classes = window.location.href === events[i]["html_url"] ? "article_sidebar_link current_sidebar_link" : "article_sidebar_link"
+        if (section_id) {
+          $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section="+section_id+"&sort_by=created_at", function (data) {
+            var events = data["results"];
+            var i;
             
-            var html_text = `<li
-              class="promoted-articles-item column column--xs-12"
-            >
-              <div class="promoted-articles-item__content">
-                <a class="${classes}" href="${events[i]["html_url"]}">
-                  ${events[i]["title"]}
-                </a>
-              </div>
-            </li>`
-            $('#section_articles').append(html_text);
-          }
-        });
+            for (i = 0; i < events.length; i++) {
+  
+              var classes = window.location.href === events[i]["html_url"] ? "article_sidebar_link current_sidebar_link" : "article_sidebar_link"
+              
+              var html_text = `<li
+                class="promoted-articles-item column column--xs-12"
+              >
+                <div class="promoted-articles-item__content">
+                  <a class="${classes}" href="${events[i]["html_url"]}">
+                    ${events[i]["title"]}
+                  </a>
+                </div>
+              </li>`
+              $('#section_articles').append(html_text);
+            }
+          });
+        }
         
         $('.glossary_selector').click((elem) => {
           $schools.hide();
