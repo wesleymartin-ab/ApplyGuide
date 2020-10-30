@@ -93,6 +93,37 @@
         $topbar.addClass("topbar--small");
       }
 
+      function getCategoryId() {
+        category_id = null;
+        try{
+          var category_id = null;
+          var category_slug = $("ol.breadcrumbs li:nth-child(2) > a[href*='categories/'")
+            .attr("href")
+            .split("categories/")[1];
+          try {
+            category_id = category_slug.split("-")[0];
+          } catch (error) {
+            category_id = category_slug;
+          }
+        } catch{}
+        return category_id;
+      }
+      
+      function setSchoolFlag() {
+        var id = getCategoryId();
+        var countries = {
+          360001909753: "canada_icon",
+          360002200674: "us_icon",
+          360002421414: "uk_icon",
+          360002200694: "australia_icon"
+        }
+        if(id) {
+          $('#country_flag_object').attr('id', countries[id])
+        }
+      }
+
+      setSchoolFlag();
+
       $topbar.removeClass(HC_SETTINGS.css.hiddenClass);
 
       $("[data-toggle-menu]").click(function () {
@@ -223,71 +254,58 @@
         }, "xml");
       });
 
-      $(window).on("scroll resize", function () {
-        // var scrolled = $(window).scrollTop();
-        // var $topbarNav = $(".topbar__nav");
-        // if (scrolled > $topbarNav.outerHeight()) {
-        //   $topbarNav.addClass("topbar__nav--scrolled");
-        // } else {
-        //   $topbarNav.removeClass("topbar__nav--scrolled");
-        // }
-      });
-
       // Wesleys work here on out
-
-      function update_glossary(letter) {
-        console.log(letter);
-      }
 
       function populate_glossary() {
 
         for (let letter = 0; letter < 26; letter++) {
           var l = String.fromCharCode(65 + letter)
-          $('.glossary_links').append("<div id='"+l+"' class='column glossary_selector'> "+l+" </div>")
+          $('.glossary_links').append("<div id='" + l + "' class='column glossary_selector'> " + l + " </div>")
         }
       }
-      
+
       $(document).ready(() => {
         $schools = $('.section-list-item');
         var i = 0;
         var letters = $('.glossary_selector')
         letters.each(() => {
           var l = letters.eq(i).attr("id");
-          if (l !== '*' && $('.section-list-item[id^="'+l+'"]').length === 0) {
+          if (l !== '*' && $('.section-list-item[id^="' + l + '"]').length === 0) {
             letters.eq(i).addClass('glossary_no_elements');
           }
           i++;
         })
-        if (section_id) {
-          $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section="+section_id+"&sort_by=created_at", function (data) {
-            var events = data["results"];
-            var i;
-            
-            for (i = 0; i < events.length; i++) {
-  
-              var classes = window.location.href === events[i]["html_url"] ? "article_sidebar_link current_sidebar_link" : "article_sidebar_link"
-              
-              var html_text = `<li
-                class="promoted-articles-item column column--xs-12"
-              >
-                <div class="promoted-articles-item__content">
-                  <a class="${classes}" href="${events[i]["html_url"]}">
-                    ${events[i]["title"]}
-                  </a>
-                </div>
-              </li>`
-              $('#section_articles').append(html_text);
-            }
-          });
-        }
-        
+        try {
+          if (section_id) {
+            $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=" + section_id + "&sort_by=created_at", function (data) {
+              var events = data["results"];
+              var i;
+
+              for (i = 0; i < events.length; i++) {
+
+                var classes = window.location.href === events[i]["html_url"] ? "article_sidebar_link current_sidebar_link" : "article_sidebar_link"
+
+                var html_text = `<li
+                  class="promoted-articles-item column column--xs-12"
+                >
+                  <div class="promoted-articles-item__content">
+                    <a class="${classes}" href="${events[i]["html_url"]}">
+                      ${events[i]["title"]}
+                    </a>
+                  </div>
+                </li>`
+                $('#section_articles').append(html_text);
+              }
+            });
+          }
+        } catch {}
+
         $('.glossary_selector').click((elem) => {
           $schools.hide();
           var l = elem.target.id;
           if (l !== '*') {
-            $schools = $('.section-list-item[id^="'+l+'"]');
-          }
-          else {
+            $schools = $('.section-list-item[id^="' + l + '"]');
+          } else {
             $schools = $('.section-list-item');
           }
           $schools.show();
