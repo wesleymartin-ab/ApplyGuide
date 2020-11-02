@@ -1,14 +1,14 @@
 <div class="layout">
   <div class="layout__head">
     <header class="topbar is-hidden {{#is settings.hero_show_image 'yes'}}topbar_image{{/is}}" data-topbar>
-      <div class="topbar__nav container">
+      <div class="topbar__nav topbar__nav--white container">
         <div class="container-inner topbar__container-inner">
           <div class="topbar__inner">
             <div class="topbar__col clearfix">
               <div class="logo-wrapper">
                 <div class="logo">
                   {{#link 'help_center'}}
-                    <img src="{{settings.logo}}" alt="logo" data-svg>
+                    <img src="{{settings.full_logo}}" alt="logo" data-svg>
                   {{/link}}
                 </div>
               </div>
@@ -62,9 +62,27 @@
                   <a class="topbar_category_link column column--xs-2" href="https://applyguide.zendesk.com/hc/en-us/categories/360001884593-Resources-Onboarding-">
                     Resources
                   </a>
-                  <a class="topbar_category_link column column--xs-2" href="https://applyguide.zendesk.com/hc/en-us/categories/360004377613-Global-Markets">
-                    Global Markets
-                  </a>
+                    <div id="user globalmarkets" class="user-info dropdown column column--xs-2" data-helper="user_info">
+                      <div class="btn with-image dropdown-toggle" role="button">
+                        <a id="user-name" class="topbar_category_link" href="https://applyguide.zendesk.com/hc/en-us/categories/360004377613-Global-Markets">
+                          Global Markets
+                        </a>
+                      </div>
+                      <div id="user-dropdown" class="dropdown-menu dropdown-menu-end dropdown-menu-caret" aria-expanded="false" role="menu">
+                        <a role="menuitem" class="my-activities" href="https://applyguide.zendesk.com/hc/en-us/categories/360001909753-Canadian-Schools">
+                          Canada
+                        </a>
+                        <a role="menuitem" class="my-activities" href="https://applyguide.zendesk.com/hc/en-us/categories/360002200674-USA-Schools-">
+                          United States
+                        </a>
+                        <a role="menuitem" class="my-activities" href="https://applyguide.zendesk.com/hc/en-us/categories/360002421414-United-Kingdom-Schools">
+                          United Kingdom
+                        </a>
+                        <a role="menuitem" class="my-activities" href="https://applyguide.zendesk.com/hc/en-us/categories/360002200694-Australian-Schools-">
+                          Australia
+                        </a>
+                      </div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -82,7 +100,17 @@
                 {{settings.hero_title}}
               {{/if}}
             </div>
-            {{search instant=true placeholder=settings.search_placeholder}}
+            {{search instant=true submit=false placeholder=settings.search_placeholder}}
+            <span id="clicky_search_thing"></span>
+          </div>
+          <div class="btn-group">
+            <p class="popular-searches">Popular Searches:</p>
+            <a href="https://applyguide.zendesk.com/hc/en-us/search?utf8=%E2%9C%93&query=seneca+college">
+            <button>Seneca College</button></a>
+            <a href="https://applyguide.zendesk.com/hc/en-us/search?utf8=%E2%9C%93&query=personal+spending+account">
+              <button>PSA</button></a>
+            <a href="https://applyguide.zendesk.com/hc/en-us/search?utf8=%E2%9C%93&query=george+brown+college">
+              <button>George Brown College</button></a>
           </div>
         </div>
       </div>
