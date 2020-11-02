@@ -5,22 +5,28 @@
         {{breadcrumbs}}
       </div>
     </div>
-    <div class="row clearfix">
-      <div class="page-header page-header--center">
-        <div id="country_flag_object" class="category-list-item__icon"></div>
-        <h1 class="page-header__title">
-          {{#if section.internal}}
-          <span class="fas fa-lock" title="{{t 'internal'}}"></span>
-          {{/if}}
-          {{section.name}}
-        </h1>
-        {{#if section.description}}
-        <p class="page-description">{{section.description}}</p>
+
+
+    <div class="page-header page-header--center">
+      <div id="country_flag_object" class="category-list-item__icon"></div>
+      <h1 class="page-header__title">
+        {{#if section.internal}}
+        <span class="fas fa-lock" title="{{t 'internal'}}"></span>
         {{/if}}
-        <div class="section-header__col section-header__col--button">
-          {{subscribe}}
-        </div>
+        {{section.name}}
+      </h1>
+      {{#if section.description}}
+      <p class="page-description">{{section.description}}</p>
+      {{/if}}
+      <div class="section-header__col section-header__col--button">
+        {{subscribe}}
       </div>
+    </div>
+
+  </div>
+
+  <div class="container-inner">
+    <section>
       <h4 class="section-header">
         <b>
           General Categories
@@ -29,17 +35,22 @@
       <ul class="row updated-category-list">
         {{#each section.sections}}
         <div class="column column--sm-6 section-list-item" id="{{id}}">
-          <a class="section-list-item__link" href="{{url}}">
-            <h2 class="h4 category-list-item__title" align="center">
+          <a class="section-list-item__link school-section-link" href="{{url}}">
+            <div class="column column--sm-4 school-section-icon" align="right">
+              <img src={{asset 'industry_resources.png'}}>
+            </div>
+            <h2 class="column column--sm-8 h4 category-list-item__title" align="right">
               {{name}}
             </h2>
-            <p class="meta" align="center">
-              {{excerpt description}}
-            </p>
           </a>
         </div>
         {{/each}}
       </ul>
+    </section>
+  </div>
+
+  <div class="container-inner">
+    <section>
       {{#if section.articles}}
       <h4 class="section-header">
         <b>
@@ -52,7 +63,7 @@
           <li class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4">
             <div class="promoted-articles-item__content">
               {{#if internal}}
-              <span class="fas fa-lock" title="{{t "internal"}}"></span>
+              <span class="fas fa-lock" title="{{t internal}}"></span>
               {{/if}}
               <a class="promoted-articles-item__title" href="{{url}}">
                 {{title}}
@@ -63,7 +74,9 @@
         </ul>
       </ul>
       {{/if}}
-    </div>
+    </section>
   </div>
-</div>
+
+
+
 </div>
