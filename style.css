@@ -919,7 +919,7 @@ input[type="search"] {
   padding: calc(12px / 2) 12px;
   font-size: 16px;
   line-height: $line_height_base;
-  color: #C4C4C4;
+  color: #323847;
   background-color: #fff;
   background-image: none;
   border: 1px solid lighten(#818a91, 22%);
@@ -2208,18 +2208,15 @@ main {
   /* topBar */
 }
 
-#360001884593.category-list-item__link .meta {
-  margin: auto;
-  width: 247px;
-}
-
 .meta {
   padding: 10px;
+  padding-left: 25px;
+  paddin-right: 25px;
   line-height: 24px;
   font-family: open sans, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #7F8BAD;
+  color: #323847;
 }
 
 .meta__item {
@@ -2742,7 +2739,7 @@ main {
 
 .breadcrumbs>li {
   display: inline-block;
-  color: #818a91;
+  color: #323847;
 }
 
 .breadcrumbs>li+li:before {
@@ -2757,7 +2754,7 @@ main {
 }
 
 .breadcrumbs>li:last-child a {
-  color: $brand_secondary;
+  color: #323847;
 }
 
 .breadcrumbs--search-results {
@@ -2887,7 +2884,7 @@ input[type="search"]:focus {
 }
 
 .search-results-column a {
-  color: $link_color;
+  color: #0064e1;
 }
 
 .search-box {
@@ -5057,7 +5054,7 @@ li::marker {
 }
 
 .copyright a {
-  color: $footer_link_color;
+  color: #0064e1;
 }
 
 .layout {
@@ -7948,6 +7945,8 @@ span.sidenav__section-name {
 
 .apply-fam {
   width: 100%;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .apply-fam .fa-star {
