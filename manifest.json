@@ -368,7 +368,7 @@
           "type": "color",
           "description": "Footer link color",
           "label": "Link color",
-          "value": "#276FD0"
+          "value": "#0064e1"
         },
         {
           "identifier": "footer_social_link_color",
