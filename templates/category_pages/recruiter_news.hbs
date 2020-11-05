@@ -1,0 +1,21 @@
+<div class="container category-page">
+  <div class="container-inner">
+    <div class="page-header page-header--center">
+      <div
+        id="generic_category_icon"
+        style="background-image: url(
+          {{asset "recruiter_news.png"}}
+          )"
+        class="category-list-item__icon"
+      ></div>
+      <h1 class="page-header__title">
+        {{category.name}}
+      </h1>
+      {{#if category.description}}
+        <p class="page-description">
+          {{category.description}}
+        </p>
+      {{/if}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="container category-page">
+  <div class="container-inner">
+    <div class="page-header page-header--center">
+      <div
+        aria-label="student-success-icon"
+        role="img"
+        alt="Student Success Icon"
+        id="generic_category_icon"
+        style="background-image: url( {{asset "student_success.png"}} )"
+        class="category-list-item__icon"
+      ></div>
+      <h1 class="page-header__title">
+        {{category.name}}
+      </h1>
+      {{#if category.description}}
+        <p class="page-description">
+          {{category.description}}
+        </p>
+      {{/if}}
+      <ul class="row updated-category-list">
+        {{#each category.sections}}
+          {{#each articles}}
+            <li
+              class="column column--sm-6 column--md-4 category-list-item global-markets-list"
+            >
+              <a class="category-list-item__link" href="{{url}}" style="padding: 64px 40px 64px 40px;">
+                {{#is id 360058698073}}
+                  <div
+                    id="generic_category_icon"
+                    style="background-image: url(
+                      {{asset "refunds_and_defferals.png"}}
+                       )"
+                    class="category-list-item__icon"
+                  ></div>
+                {{/is}}
+                {{#is id 360056813174}}
+                  <div
+                    id="generic_category_icon"
+                    style="background-image: url(
+                      {{asset "admissions_decisions_and_next_steps.png"}}
+                       )"
+                    class="category-list-item__icon"
+                  ></div>
+                {{/is}}
+                {{#is id 360056813114}}
+                  <div
+                    id="generic_category_icon"
+                    style="background-image: url(
+                      {{asset "payments_and_processing_times.png"}}
+                       )"
+                    class="category-list-item__icon"
+                  ></div>
+                {{/is}}
+                {{#is id 360056813074}}
+                  <div
+                    id="generic_category_icon"
+                    style="background-image: url(
+                      {{asset "applyboard_fees.png"}}
+                       )"
+                    class="category-list-item__icon"
+                  ></div>
+                {{/is}}
+                {{#is id 360058697953}}
+                  <div
+                    id="generic_category_icon"
+                    style="background-image: url(
+                      {{asset "document_completeness.png"}}
+                       )"
+                    class="category-list-item__icon"
+                  ></div>
+                {{/is}}
+                {{#is id 360058697773}}
+                  <div
+                    id="generic_category_icon"
+                    style="background-image: url(
+                      {{asset "application_requirements_101.png"}}
+                       )"
+                    class="category-list-item__icon"
+                  ></div>
+                {{/is}}
+                <h2 class="h4 category-list-item__title" align="center">
+                  {{title}}
+                </h2>
+                <p class="meta" align="center">
+                  Lorem ipsum dolor sit emt, consectetur adipiscing elit
+                </p>
+              </a>
+            </li>
+          {{/each}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

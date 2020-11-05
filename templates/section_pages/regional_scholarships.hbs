@@ -1,0 +1,34 @@
+<div class="container section-page">
+  <div class="container-inner">
+    <div class="page-header page-header--center">
+
+      {{#is section.id 360010435014}}
+        <div id="canada_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      {{#is section.id 360010435034}}
+        <div id="australia_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      {{#is section.id 360011554093}}
+        <div id="us_icon" class="category-list-item__icon"></div>
+      {{/is}}
+      {{#is section.id 360011554133}}
+        <div id="uk_icon" class="category-list-item__icon"></div>
+      {{/is}}
+
+      <h1 class="page-header__title">
+        {{#if section.internal}}
+        <span class="fas fa-lock" title="{{t 'internal'}}"></span>
+        {{/if}}
+        {{section.name}}
+      </h1>
+      {{#if section.description}}
+      <p class="page-description">{{section.description}}</p>
+      {{/if}}
+      <div class="section-header__col section-header__col--button">
+        {{subscribe}}
+      </div>
+    </div>
+
+  </div>
+
+</div>
