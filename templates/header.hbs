@@ -32,15 +32,6 @@
                         placeholder=settings.search_placeholder
                       }}
                     </div>
-                  {{#if settings.toggle_custom_link}}
-                    <a href="{{#if settings.toggle_translations}}{{dc settings.topbar_custom_link_url}}{{else}}{{settings.topbar_custom_link_url}}{{/if}}" class="topbar__link">
-                      {{#if settings.toggle_translations}}
-                        {{dc settings.topbar_custom_link_title}}
-                      {{else}}
-                        {{settings.topbar_custom_link_title}}
-                      {{/if}}
-                    </a>
-                  {{/if}}
                   {{link 'community' class='topbar__link'}}
                   {{link 'new_request' class='topbar__link submit-a-request'}}
                   {{user_info}}

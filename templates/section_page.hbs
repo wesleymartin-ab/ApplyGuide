@@ -15,12 +15,10 @@
         </div>
     </div>
   {{#if section.articles}}
-  <ul class="column column--md-12">
-        <ul class="promoted-articles__list row">
+  <div class="column column--md-12">
+        <div class="promoted-articles__list row">
           {{#each section.articles}}
-            <li
-              class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4"
-            >
+            <div class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4">
               <div class="promoted-articles-item__content">
                 {{#if internal}}
                   <span class="fas fa-lock" title="{{t "internal"}}"></span>
@@ -29,39 +27,39 @@
                   {{title}}
                 </a>
               </div>
-            </li>
+            </div>
           {{/each}}
-        </ul>
-  </ul>
+        </div>
+  </div>
   {{/if}}
 
 
   {{#if section.sections}}
-  <ul class="row section-list">
+  <div class="row section-list">
     {{#each section.sections}}
-    <li class="column column column--sm-6 column--md-12 section-list-item">
+    <div class="column column column--sm-6 column--md-12 section-list-item">
         <h3 class="section__title-link" href>
           {{name}}
         </a>
         </h3>
 
-    </li>
+    </div>
 
-  <ul class="column column--md-12">
+  <div class="column column--md-12">
     {{#each articles}}
     <div class="column column--md-4">
-      <li class="article-list-item {{#if promoted}}article-list-item--is-promoted{{/if}}">
+      <div class="article-list-item {{#if promoted}}article-list-item--is-promoted{{/if}}">
         {{#if promoted}}
         <span class="fas fa-star" title="{{t 'promoted'}}"></span>
 
         {{/if}}
         <a class="article-list-item__link" href="{{url}}">{{title}}</a>
-      </li>
+      </div>
     </div>
     {{/each}}
-  </ul>
+  </div>
     {{/each}}
-  </ul>
+  </div>
   {{/if}}
 
   {{pagination}}
