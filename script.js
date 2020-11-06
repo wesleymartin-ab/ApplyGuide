@@ -69,25 +69,6 @@
         $('.layout__content').css('padding-top', 'calc(18px * 1.25 * 5)')
         // Wesleys work here on out
 
-        $(document).ready(function () {
-
-          // Update the most recent buzz link
-          $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=360006081614&sort_by=created_at", function (data) {
-
-            $("#apply_buzz_link").attr("href", data["results"][0]["html_url"])
-          });
-
-          $.get("https://applyguide.zendesk.com/api/v2/help_center/articles/search.json?section=360009375814&sort_by=created_at", function (data) {
-            var events = data["results"];
-            var i;
-            for (i = 0; i < ((events.length > 10) ? 10 : events.length); i++) {
-              $('#event-' + i).attr("onclick", `location.href='${events[i]["html_url"]}'`)
-              $('#event-' + i).html(events[i]["title"])
-              $('#event-' + i).css("display", "block")
-            }
-          });
-        })
-
 
       } else {
         $topbar.addClass("topbar--small");

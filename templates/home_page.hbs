@@ -2,204 +2,163 @@
 <div class="categories-section container container--grey" data-home-page>
   <div class="container-inner">
     {{#is settings.toggle_category_list "yes"}}
-      {{#if categories}}
-        <div class="knowledge-base" id="category-list">
-          <ul class="row updated-category-list">
-            {{#each categories}}
-              {{! TODO: Convert this to a method to check which category it is }}
-              {{#is name "Global Markets"}}
-                <div
-                  class="column column--sm-12 category-list-item"
-                  id="{{id}}"
-                >
-                  <a class="category-list-item__link" href="{{url}}">
-                    <div
-                      id="global_markets_icon"
-                      class="category-list-item__icon"
-                    ></div>
-                    <h2 class="h4 category-list-item__title" align="center">
-                      {{name}}
-                    </h2>
-                    <p class="meta" align="center">
-                      {{excerpt description}}
-                    </p>
-                  </a>
-                </div>
-              {{/is}}
-              {{#is name "Company Updates"}}
-                <div class="column column--sm-4 category-list-item" id="{{id}}">
-                  <a class="category-list-item__link" href="{{url}}">
-                    <div
-                      id="company_updates_icon"
-                      class="category-list-item__icon"
-                    ></div>
-                    <h2 class="h4 category-list-item__title" align="center">
-                      {{name}}
-                    </h2>
-                    <p class="meta" align="center">
-                      {{excerpt description}}
-                    </p>
-                  </a>
-                </div>
-              {{/is}}
-              {{#is name "Departments and Teams"}}
-                <div
-                  class="column column--sm-4 category-list-item"
-                  id="{{id}}"
-                  data="{{name}}"
-                >
-                  <a class="category-list-item__link" href="{{url}}">
-                    <div
-                      id="departments_icon"
-                      class="category-list-item__icon"
-                    ></div>
-                    <h2 class="h4 category-list-item__title" align="center">
-                      {{name}}
-                    </h2>
-                    <p class="meta" align="center">
-                      {{excerpt description}}
-                    </p>
-                  </a>
-                </div>
-              {{/is}}
-              {{#is name "Resources and Onboarding "}}
-                <div class="column column--sm-4 category-list-item" id="{{id}}">
-                  <a class="category-list-item__link" href="{{url}}">
-                    <div
-                      id="onboarding_and_resources_icon"
-                      class="category-list-item__icon"
-                    ></div>
-                    <h2 class="h4 category-list-item__title" align="center">
-                      {{name}}
-                    </h2>
-                    <p class="meta" align="center">
-                      {{excerpt description}}
-                    </p>
-                  </a>
-                </div>
-              {{/is}}
-            {{/each}}
-          </ul>
+    {{#if categories}}
+    <div class="knowledge-base" id="category-list">
+      <ul class="row updated-category-list">
+        {{#each categories}}
+        {{#is id 360005629933}}
+        <div class="column column--sm-4 category-list-item" id="{{id}}">
+          <a class="category-list-item__link" href="{{url}}">
+            <div aria-label="promotions-and-scholorship-icon" role="img" alt="Promotions and Scholorship Icon"
+              id="homepage_category_icon" style="background-image: url(
+                        {{asset "promotions_and_scholorships.png"}}
+                         )" class="category-list-item__icon"></div>
+            <h2 class="h4 category-list-item__title" align="center">
+              {{name}}
+            </h2>
+            <p class="meta" align="center">
+              {{excerpt description}}
+            </p>
+          </a>
         </div>
-      {{/if}}
+        {{/is}}
+        {{#is id 360004584614}}
+        <div class="column column--sm-4 category-list-item" id="{{id}}">
+          <a class="category-list-item__link" href="{{url}}">
+            <div aria-label="recruiter-news-icon" role="img" alt="Recruiter News Icon" id="homepage_category_icon"
+              style="background-image: url(
+                        {{asset "recruiter_news.png"}}
+                         )" class="category-list-item__icon"></div>
+            <h2 class="h4 category-list-item__title" align="center">
+              {{name}}
+            </h2>
+            <p class="meta" align="center">
+              {{excerpt description}}
+            </p>
+          </a>
+        </div>
+        {{/is}}
+        {{#is id 360005630093}}
+        <div class="column column--sm-4 category-list-item" id="{{id}}">
+          <a class="category-list-item__link" href="{{url}}">
+            <div aria-label="policies-and-procedures-icon" role="img" alt="Policies and Procedures Icon"
+              id="homepage_category_icon" style="background-image: url(
+                        {{asset "policies_and_procedures.png"}}
+                         )" class="category-list-item__icon"></div>
+            <h2 class="h4 category-list-item__title" align="center">
+              {{name}}
+            </h2>
+            <p class="meta" align="center">
+              {{excerpt description}}
+            </p>
+          </a>
+        </div>
+        {{/is}}
+        {{#is id 360005674973}}
+        <div class="column column--sm-4 category-list-item" id="{{id}}">
+          <a class="category-list-item__link" href="{{url}}">
+            <div aria-label="student-success-icon" role="img" alt="Student Success Icon" id="homepage_category_icon"
+              style="background-image: url(
+                        {{asset "student_success.png"}}
+                         )" class="category-list-item__icon"></div>
+            <h2 class="h4 category-list-item__title" align="center">
+              {{name}}
+            </h2>
+            <p class="meta" align="center">
+              {{excerpt description}}
+            </p>
+          </a>
+        </div>
+        {{/is}}
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
     {{/is}}
   </div>
   <div class="container-inner">
-    {{#is settings.toggle_promoted_articles "yes"}}
-      <section class="promoted-articles" id="promoted-articles">
-        <h4 class="section-header">
-          <b>
-            {{t "promoted_articles"}}
-          </b>
-        </h4>
-        <ul class="promoted-articles__list row">
-          {{#each promoted_articles}}
-            <li
-              class="promoted-articles-item column column--sm-3 column--sm-6 column--lg-4"
-            >
-              <div class="promoted-articles-item__content">
-                <a class="promoted-articles-item__title" href="{{url}}">
-                  {{title}}
-                </a>
-              </div>
-            </li>
-          {{/each}}
-        </ul>
-      </section>
-    {{/is}}
-  </div>
-  <div class="container-inner">
-    <section class="apply-fam" id="apply-fam">
+    <div class="knowledge-base" id="category-list">
       <h4 class="section-header">
         <b>
-          Life at ApplyBoard
+          School Information
         </b>
       </h4>
-      <div class="row" style="height: 500px">
-        <div class="column column--xs-6 column--sm-6 column--sm-offset-1">
-          <div class="row">
-            <div class="column column--xs-6 column--sm-12 fam-card-wrapper">
-              <div class="apply-fam-card" id="fam-card__life">
-                Featured Video
-                <iframe
-                  class="life-at-applyboard-video"
-                  src="https://www.youtube.com/embed/{{settings.life_at_applyboard_youtube_id}}"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
+      <ul class="row updated-category-list">
+        {{#each categories}}
+        {{#is id 360005629933}}
+        <div class="column column--sm-6 section-list-item" id="{{id}}">
+          <a class="section-list-item__link school-section-link" href="{{url}}">
+            <div class="column column--sm-4 school-section-icon" align="right">
+              <img src={{asset 'industry_resources.png'}}>
             </div>
-          </div>
-          <div class="row">
-            <div class="column column--xs-6 column--sm-4 fam-card-wrapper">
-              <a
-                id="creative-channels_link"
-                href="https://applyguide.zendesk.com/hc/en-us/articles/360051802313-Executive-Creative-Channels-"
-              >
-                <div class="apply-fam-card" id="fam-card__creative_channels">
-                  Creative Channels
-                  <div class="apply-fam-logo">
-                    <i class="fas fa-palette"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="column column--xs-6 column--sm-8 fam-card-wrapper">
-              <a id="blog_link" href="https://www.applyboard.com/blog">
-                <div class="apply-fam-card" id="fam-card__blog">
-                  ApplyBoard Blog
-                  <div class="apply-fam-logo">
-                    <i class="fas fa-pencil-alt"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
+            <h2 class="column column--sm-8 h4 category-list-item__title" align="right">
+              {{name}}
+            </h2>
+          </a>
         </div>
-        <div class="column column--xs-6 column--sm-4">
-          <div class="row">
-            <div class="column column--xs-6 column--sm-6 fam-card-wrapper">
-              <a id="apply_buzz_link" href="">
-                <div class="apply-fam-card" id="fam-card__committees">
-                  ApplyBuzz
-                  <div class="apply-fam-logo">
-                    <i class="fas fa-bullhorn"></i>
-                  </div>
-                </div>
-              </a>
+        {{/is}}
+        {{#is id 360004584614}}
+        <div class="column column--sm-6 section-list-item" id="{{id}}">
+          <a class="section-list-item__link school-section-link" href="{{url}}">
+            <div class="column column--sm-4 school-section-icon" align="right">
+              <img src={{asset 'industry_resources.png'}}>
             </div>
-            <div class="column column--xs-6 column--sm-6 fam-card-wrapper">
-              <a
-                id="apply_clubs_link"
-                href="https://applyguide.zendesk.com/hc/en-us/sections/360004978294-ApplyClubs"
-              >
-                <div class="apply-fam-card" id="fam-card__clubs">
-                  ApplyClubs
-                  <div class="apply-fam-logo">
-                    <i id="fam-card__clubs-logo" class="fas fa-star"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="column column--xs-6 column--sm-12 fam-card-wrapper">
-              <div class="apply-fam-card" id="fam-card__events">
-                What's Happening at ApplyBoard
-                <li id="event-0" class="event-list-item" onclick=""></li>
-                <li id="event-1" class="event-list-item" onclick=""></li>
-                <li id="event-2" class="event-list-item" onclick=""></li>
-                <li id="event-3" class="event-list-item" onclick=""></li>
-                <li id="event-4" class="event-list-item" onclick=""></li>
-                <li id="event-5" class="event-list-item" onclick=""></li>
-                <li id="event-6" class="event-list-item" onclick=""></li>
-                <li id="event-7" class="event-list-item" onclick=""></li>
-              </div>
-            </div>
-          </div>
+            <h2 class="column column--sm-8 h4 category-list-item__title" align="right">
+              {{name}}
+            </h2>
+          </a>
         </div>
-      </div>
-    </section>
+        {{/is}}
+        {{#is id 360005630093}}
+        <div class="column column--sm-6 section-list-item" id="{{id}}">
+          <a class="section-list-item__link school-section-link" href="{{url}}">
+            <div class="column column--sm-4 school-section-icon" align="right">
+              <img src={{asset 'industry_resources.png'}}>
+            </div>
+            <h2 class="column column--sm-8 h4 category-list-item__title" align="right">
+              {{name}}
+            </h2>
+          </a>
+        </div>
+        {{/is}}
+        {{#is id 360005674973}}
+        <div class="column column--sm-6 section-list-item" id="{{id}}">
+          <a class="section-list-item__link school-section-link" href="{{url}}">
+            <div class="column column--sm-4 school-section-icon" align="right">
+              <img src={{asset 'industry_resources.png'}}>
+            </div>
+            <h2 class="column column--sm-8 h4 category-list-item__title" align="right">
+              {{name}}
+            </h2>
+          </a>
+        </div>
+        {{/is}}
+        {{/each}}
+      </ul>
+      </section>
+    </div>
+    {{! <section class="promoted-articles" id="promoted-articles">
+    <h4 class="column column--sm-12 section-header">
+      <b>
+        School Information
+      </b>
+    </h4> }}
+    {{!-- <ul class="promoted-articles__list row">
+
+
+    {{#each categories}}
+      {{#is id 360005675613}}
+        </li>
+      {{/is}}
+      {{#is id 360005675633}}
+        {{name}}
+      {{/is}}
+      {{#is id 360005675653}}
+        {{name}}
+      {{/is}}
+      {{#is id 360005675673}}
+        {{name}}
+      {{/is}}
+    {{/each}}
+    </ul> --}}
   </div>
-</div>

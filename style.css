@@ -2208,7 +2208,7 @@ main {
   /* topBar */
 }
 
-#360001884593.category-list-item__link .meta {
+.category-list-item__link .meta {
   margin: auto;
   width: 247px;
 }
@@ -8069,6 +8069,11 @@ span.sidenav__section-name {
 #generic_category_icon {
   min-height: 60px;
   height: 60px;
+}
+
+#tile_category_icon {
+  min-height: 88px;
+  height: 88px;
 }
 
 .glossary_links {
