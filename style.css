@@ -1891,7 +1891,7 @@ will display normally.
   }
 
   .column--sm-offset-1 {
-    margin-left: 15px;
+    margin-left: 8.33333%;
   }
 
   .column--sm-offset-2 {
@@ -2856,7 +2856,7 @@ main {
 .hero-unit {
   position: relative;
   z-index: 3;
-  padding: max(8%, 256px) 15px max(8%, 256px);
+  padding: max(8%, 256px) 15px min(8%, 256px);
   overflow: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
