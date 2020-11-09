@@ -13,15 +13,16 @@
           <span class="fas fa-lock" title="{{t 'internal'}}"></span>
         {{/if}}
         {{topic.name}}
+        {{#if topic.description}}
+          <p class="topic-description">{{topic.description}}</p>
+        {{/if}}
       </h1>
+
       <div class="topic__col topic__col--new-post">
         {{link 'new_post' role='button' class='btn btn--default' topic_id=topic.id}}
       </div>
     </header>
-
-    {{#if topic.description}}
-      <p class="topic-description">{{topic.description}}</p>
-    {{/if}}
+    
 
     <div class="topic-controls clearfix">
       <div class="topic-filters topic-controls__item clearfix">
@@ -100,7 +101,7 @@
           </span>
           <span class="post-info">
             <span class="post-info__count">
-              {{comment_count}} 
+              {{comment_count}}
             </span>
             <span class="post-info__text">
               {{t 'comment' count=comment_count}}
