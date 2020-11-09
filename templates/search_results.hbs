@@ -30,14 +30,7 @@
                 <p class="search-result__description">{{text}}</p>
 
                 <div class="meta search-result__meta">
-                    <span class="meta__item">
-                      {{#link "user_profile" id=author.id class="user-profile"}}
-                        {{author.name}}
-                      {{/link}}
-                    </span>
                     <span class="meta__item">{{date created_at}}</span>
-                    <span class="meta__item">
-                      {{t 'comments_count' count=comment_count}}
                     </span>
                   </div>
               </li>

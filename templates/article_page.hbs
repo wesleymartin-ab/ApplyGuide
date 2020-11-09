@@ -9,6 +9,7 @@
       <div id="section_articles" class="column column--sm-4">
       </div>
       <div class="column column--sm-8">
+          {{breadcrumbs}}
         <article class="article clearfix" itemscope itemtype="http://schema.org/Article">
           <header class="article-header">
             <h1 class="article__title" itemprop="name">
@@ -36,7 +37,7 @@
                         {{article.author.name}}
                       {{/link}}
                     </b>
-                    <div class="meta">{{date article.created_at}}</div>
+                    <div class="meta-date-time">{{date article.created_at}}</div>
                   </div>
                 </div>
               </div>

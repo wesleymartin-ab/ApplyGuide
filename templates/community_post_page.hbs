@@ -31,7 +31,7 @@
                         {{post.author.name}}
                       {{/link}}
                     </b>
-                    <div class="meta">{{date post.created_at}}</div>
+                    <div class="meta-time">{{date post.created_at}}</div>
                   </div>
                 </div>
               </div>
@@ -106,7 +106,7 @@
                               {{author.name}}
                             {{/link}}
                           </b>
-                          <div class="meta">
+                          <div class="meta-date-time">
                             {{date created_at}}
                             {{#if editor}}
                               ({{t 'edited'}} {{date edited_at timeago=true}})
