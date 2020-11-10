@@ -1446,6 +1446,21 @@ input[type="submit"]:active {
   transition: 0.3s;
 }
 
+.btn--primary--inverse {
+  background-color: #FFF;
+  color: #0064e1;
+  border: 1px solid #0064e1;
+  font-weight: 600;
+}
+
+.btn--primary--inverse:hover,
+.btn--primary--inverse:focus,
+.btn--primary--inverse:active {
+  background-color: #0064e1;
+  color: #FFF;
+  border: 1px solid #0064e1;
+}
+
 /* Success appears as green */
 .btn--success {
   color: #fff;
@@ -2251,11 +2266,6 @@ main {
 
 .topabr+main {
   /* topBar */
-}
-
-.category-list-item__link .meta {
-  margin: auto;
-  width: 247px;
 }
 
 .meta {
@@ -3358,12 +3368,6 @@ input[type="search"]:focus {
   }
 }
 
-.category-list-item__link .meta {
-  margin-bottom: 0;
-  margin: auto;
-}
-}
-
 .category-list-item__title h4 {
   font-size: 24px !important;
 }
@@ -3547,77 +3551,6 @@ input[type="search"]:focus {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap
   }
-}
-
-.section-list-item {
-  padding-bottom: 0;
-}
-
-@media (min-width: 768px) {
-  .section-list-item {}
-}
-
-.section-list-item__link {
-  display: block;
-  padding: 22px 20px;
-  font-weight: 400;
-  color: #323847;
-  text-align: left;
-  vertical-align: middle;
-  background-color: #fff;
-  border-radius: 8px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  box-shadow: 0px 3px 9px 3px rgba(0, 0, 0, 0.12);
-}
-
-.school-section-link {
-  min-height: 150px;
-  text-align: center;
-}
-
-.school-section-icon {
-  height: 60px;
-  width: auto;
-  padding-top: 21px;
-}
-
-.section-list-item__link .category-list-item__title {
-  font-size: calc($font_size_base * $line_height_base * 1.5);
-  padding-top: 30px
-  text-align: center;
-  margin: auto;
-}
-
-.section-list-item__link:active,
-.section-list-item__link:focus,
-.section-list-item__link:hover {
-  box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.12);
-  transform: translateY(-6px);
-  color: #0064e1;
-}
-
-.section-list-item__link:active .section-list-item__title,
-.section-list-item__link:focus .section-list-item__title,
-.section-list-item__link:hover .section-list-item__title {
-  color: #0064e1;
-}
-
-.section-list-item__link:active .meta,
-.section-list-item__link:focus .meta,
-.section-list-item__link:hover .meta {
-  color: #fff;
-}
-
-@media (min-width: 768px) {
-  .section-list-item__link {
-    height: 100%
-  }
-}
-
-.section-list-item__title {
-  margin-bottom: 0px;
-  font-weight: 600;
 }
 
 .article-page {
@@ -6813,6 +6746,11 @@ li::marker {
   text-align: left;
 }
 
+.section-header--center {
+  text-align: center;
+  margin-bottom: 0%;
+}
+
 .promoted-articles .fa-chart-line {
   color: $brand_warning;
 }
@@ -6821,6 +6759,11 @@ li::marker {
   .section-header {
     font-size: 32px;
     margin-bottom: 25px;
+  }
+
+  .section-header--center {
+    text-align: center;
+    margin-bottom: 0%;
   }
 }
 
@@ -8447,4 +8390,84 @@ span.sidenav__section-name {
 
 .wysiwyg-color-blue {
   color: #0064e1 !important;
+}
+
+/*  Here down  */
+
+
+.section-list-item {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+@media (min-width: 768px) {
+  .section-list-item {}
+}
+
+.section-list-item__link {
+  display: block;
+  padding: 22px 20px;
+  font-weight: 400;
+  color: #323847;
+  text-align: left;
+  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0px 3px 9px 3px rgba(0, 0, 0, 0.12);
+}
+
+.school-section-link {
+  min-height: 168px;
+  text-align: center;
+}
+
+.school-section-icon {
+  height: 72px;
+  width: auto;
+  padding-top: 30px;
+}
+
+.section-list-item__link .category-list-item__title {
+  font-size: calc($font_size_base * $line_height_base * 1.5);
+  padding-top: 48px;
+  text-align: left;
+  margin: auto;
+}
+
+.section-list-item__link:active,
+.section-list-item__link:focus,
+.section-list-item__link:hover {
+  box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  color: #0064e1;
+}
+
+.section-list-item__link:active .section-list-item__title,
+.section-list-item__link:focus .section-list-item__title,
+.section-list-item__link:hover .section-list-item__title {
+  color: #0064e1;
+}
+
+.section-list-item__link:active .meta,
+.section-list-item__link:focus .meta,
+.section-list-item__link:hover .meta {
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .section-list-item__link {
+    height: 100%
+  }
+}
+
+.section-list-item__title {
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+.support-banner {
+  text-align: center;
+  width: 100%;
 }
