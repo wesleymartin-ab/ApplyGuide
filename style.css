@@ -2818,28 +2818,29 @@ main {
   margin-bottom: 45px;
   list-style: none;
   background-color: transparent;
+  font-family: $font_family_base;
 }
 
 .breadcrumbs>li {
-  font-family: open sans, sans-serif;
+  font-family: $font_family_base;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   display: inline-block;
   color: #323847;
 }
 
 .breadcrumbs>li+li:before {
   padding: 0 5px;
-  color: #ccc;
+  color: #323847;
   content: "›\00a0";
-  font-weight: 900;
+  font-weight: 400;
 }
 
 .breadcrumbs>li a {
-  color: #0064e1;
+  color: #323847;
   font-size: 16px !important;
   font-weight: 400;
-  font-family: open sans, sans-serif;
+  font-family: $font_family_base;
 }
 
 
@@ -2849,7 +2850,7 @@ main {
 
 .breadcrumbs--search-results {
   padding: 0;
-  margin-bottom: calc($font_size_base * $line_height_base / 2);
+  margin-bottom: calc($font_size_base * $line_height_base);
   font-size: calc($font_size_base * 0.85);
   color: #323847;
 }
@@ -2935,18 +2936,6 @@ main {
   position: relative;
 }
 
-.search:before {
-  position: absolute;
-  top: 50%;
-  width: 17px;
-  height: 17px;
-  content: "";
-  margin-right: 8px;
-  background: url($assets-search-svg) no-repeat;
-  -webkit-transform: translateY(-50%) scale(1.25, 1.25);
-  transform: translateY(-50%) scale(1.25, 1.25);
-}
-
 #clicky_search_thing {
   position: absolute;
   top: 80%;
@@ -2985,6 +2974,7 @@ input[type="search"]:focus {
 .h3.search-results-subheading__title {
   font-size: 32px;
   color: #323847;
+  margin-bottom: calc($font_size_base * 2);
 }
 
 
@@ -3036,55 +3026,31 @@ input[type="search"]:focus {
 
 .search-box--hero-unit input[type="submit"] {
   display: inline-block;
+  font-weight: 600;
   height: 50px;
+  font-family: $font_family_base;
   padding-right: calc(12px + 4);
   padding-left: calc(12px + 4);
   margin-left: 20px;
   font-size: $font_size_base;
-  color: #fff;
+  color: $brand_secondary;
   text-transform: capitalize;
-  background-color: $brand_secondary;
-  border-color: $brand_secondary;
+  background-color: #FFF;
+  border-color: #FFF;
   border-radius: $border_radius_base;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-}
+} 
 
 .search-box--hero-unit input[type="submit"]:hover,
 .search-box--hero-unit input[type="submit"]:focus,
 .search-box--hero-unit input[type="submit"]:active {
-  color: darken(#fff, 12%);
-  background-color: darken($button_color_1, 12%);
-  border-color: darken($button_color_1, 12%);
+  background-color: $brand_secondary;
+  color: #FFF;
 }
 
 .search-box--hero-unit input[type="submit"]:active {
   background-image: none;
-}
-
-.search-box--hero-unit input[type="submit"]:hover {
-  color: #fff;
-  /*background: -webkit-linear-gradient(
-        111deg,
-        darken($brand_secondary, 10%),
-        darken($brand_secondary, 15%)
-      );
-      background: -moz-linear-gradient(
-        111deg,
-        darken($brand_secondary, 10%),
-        darken($brand_secondary, 15%)
-      );
-      background: -o-linear-gradient(
-        111deg,
-        darken($brand_secondary, 10%),
-        darken($brand_secondary, 15%)
-      );
-      background: linear-gradient(
-        111deg,
-        darken($brand_secondary, 10%),
-        darken($brand_secondary, 15%)
-      );*/
-
 }
 
 @media (max-width: 991px) {
@@ -3130,12 +3096,16 @@ input[type="search"]:focus {
 }
 
 .search-results-count {
+  margin-top: -12px;
   font-size: calc($font_size_base * 1.25);
+  margin-bottom: calc($font_size_base * 1.75);
+  font-weight: 600;
+  font-size: 18px;  
 }
 
 .search-result {
-  margin-bottom: calc($font_size_base * $line_height_base);
-  border-bottom: 1px solid #eee;
+  margin-bottom: 36px;
+  border-bottom: 1px solid #A4ACC2;
 }
 
 .search-result__title {
@@ -3144,8 +3114,9 @@ input[type="search"]:focus {
 }
 
 .search-result__description {
-  margin-bottom: calc($font_size_base * $line_height_base / 2);
+  margin-bottom: 0px;
   font-size: calc($font_size_base * 0.85);
+  font-weight: 400;
 }
 
 .search-result__description:empty {
@@ -3161,7 +3132,9 @@ input[type="search"]:focus {
 }
 
 .search-result__meta {
-  margin-bottom: calc($font_size_base * $line_height_base / 2);
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-style: italic;
   padding-left: 0 !important;
 }
 

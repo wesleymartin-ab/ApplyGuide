@@ -48,7 +48,6 @@
       var $topSearchBar = $(".topbar__search-bar");
       var $topSearchBarQuery = $topSearchBar.find("#query");
       var $topSearchBarBtn = $(".topbar__btn-search");
-      var $searchButton = $('#clicky_search_thing');
       var $schools = []
 
       if (Utils.isHomepage() || $('[data-search-results]').length) {
@@ -135,10 +134,7 @@
       $("#request-status-select, #request-organization-select").on("change", function () {
         search();
       });
-
-      $searchButton.click(function (e) {
-        search();
-      })
+      
       // Submit search on input enter
       $("#quick-search").on("keypress", function (e) {
         if (e.which === 13) {
